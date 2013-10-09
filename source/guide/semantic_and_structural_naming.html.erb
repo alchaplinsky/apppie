@@ -1,0 +1,27 @@
+<%=  partial "guide/navigation"%>
+<div class="mainbar">
+  <h2>Class naming Basics</h2>
+   <p>When you're working on a Web page and need to come up with an identifying name for a div, the natural temptation is to use a name that describes the element's page location or element representation like .horizontal-nav, .left-side, .white-block. These are all valid names for CSS and XHTML classes. They're simple and descriptive, so they serve the purpose of identifying the page element and its corresponding CSS style. But problem is that such names relate to a specific presentation of the content. They reference the position of page elements in a particular page layout, and may be inappropriate and confusing outside the context of that layout.</p>
+
+   <p>For example if .white-block someday will be redesigned to have not white background but blue. Will you try to find all on .white-block classes in the project to rename it? Or you'll just specify new background color for current class and leave it alone? In first case it will take some time to find all usages of this class and rename it. And in second you'll have white-block class which adds blue background to block. Isn't it inappropriate? So it is better to avoid such class names.</p>
+
+   <h2>Structural naming</h2>
+
+   <p>Structural naming convention – in essence – just means that you name elements by describing what they are, and not where they are or how they look. The goal is for all markup to relate information about the document's structure rather than its presentation. Therefore, structural naming names classes by their purpose in the document, not their location.</p>
+
+   <p>Here are a few guidelines to help you name your elements structurally, and these are just that – guidelines. In the end, you have to use what’s best for you and the project at hand:</p>
+
+   <strong>1. When assigning a class, ask yourself “What is this element for?”</strong>
+
+   <p>For example, there is a media block that represents a link to some details page and it is containing image, text and hover state. You should call it maybe <code>.teaser-block</code> instead of <code>.post-block</code> or <code>.article</code> because it is actually for attracting user to click on it, but not for specifying that user looks at a blog post or an article.</p>
+
+   <strong>2. Avoid using names that rely on locational or visual aspects of the particular element</strong>
+
+   <p>For example, if you have a span class that’s meant for captions, you might call it <code>.caption</code> or <code>.figure-caption</code> instead of <code>.smaller-text</code>.</p>
+
+   <p>If a particular group of images are banner advertisements, you might want to call the class <code>.banner</code> or <code>.ad-banner</code> instead of <code>.sidebar-images</code> (since they may change locations).</p>
+
+   <strong>3. Use names that are intuitive to you</strong>
+
+   <p>Here’s a good guideline for naming classes intuitively. Ask yourself, “If I asked another front-end developer working in a project what this class is for, would he automatically know?” That’s like programming, naming variables intuitively so that other programmers will know what the variable holds ($total instead of $t) – and that lesson is applicable to CSS naming conventions.</p>
+</div>

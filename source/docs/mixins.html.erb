@@ -1,0 +1,36 @@
+<%=  partial "docs/navigation"%>
+<div class="mainbar">
+    <h1>Mixins</h1>
+    <p>First of all, lets admit: yes, we use <a href="http://sass-lang.com" target="_blank">SASS</a>.</p>
+    <p>Second, we think that <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins">mixins</a> is a very powerful tool to help you keep your code clean and beautiful.</p>
+    <p>Most of the time it appears to be the case when you need to write few lines of code to define one single rule but for multiple browsers every of which has its own prefix.</p>
+    <p>Remember <i>border-radius</i>?</p>
+    <pre lang="css"><code>.button {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+}</code></pre>
+    <p>Here goes a mixin:</p>
+    <pre lang="sass"><code>=border-radius($properties)
+  -webkit-border-radius: $properties
+  -moz-border-radius: $properties
+  border-radius: $properties</code></pre>
+    <p>This code allows you just to call mixin every time you need...</p>
+    <pre lang="css"><code>.button {
+  +border-radius(5px)
+}</code></pre>
+    <p>...and it will generate all code for you.</p>
+    <p>If <i>border-radius</i> example does not impress you, recall gradients:</p>
+    <pre><code>.button {
+  background-color: #b76096;
+  background: -moz-linear-gradient(top, #b76096, #9c4b7d);
+  background: -webkit-gradient(linear, left top, left bottom, from(#b76096), to(#9c4b7d));
+  background: -o-linear-gradient(top, #b76096, #9c4b7d);
+  filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#FFB76096', EndColorStr='#FF9C4B7D', GradientType=0);
+}</code></pre>
+    <p>
+      Which, in case of using mixins, can be replaced with:
+    </p>
+    <pre lang="sass">+vertical-gradient(#b76096, #9c4b7d)</pre>
+</div>

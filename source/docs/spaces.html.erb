@@ -1,0 +1,20 @@
+<%=  partial "docs/navigation"%>
+<div class="mainbar">
+    <h1>Spacings</h1>
+    <p><strong>Spacings</strong> - is pretty simple concept that can be used in absolutely every project. It allows you to get rid of multiple <code>margin</code> and <code>padding</code> rules in your css code.</strong></p>
+    <p>If you find yorself writing <code>margin-bottom: 20px</code> for about dozen of times - you might need helper class for it. This means that you have pretty standard bottom spacing (margin) for UI objects, and that's good! That's consistency in design but, that is duplication in code. The same with inner paddings of different blocks and left or right spacings between buttons - all this should be consistent. And we can use helper classes for this, so we don't need to rewrite all this rules in CSS code for hundreds of times.</p>
+    <p>Let's define 3 different space sizes, let's say <code>small: 5px</code>, <code>medium: 15px</code> and <code>large: 30px</code> and create helper classes for them. Naming is pretty simple and inpuitive: Each class name will consist of three letters, first one defines if it is <code>margin</code> or <code>padding</code>(<em>m</em> or <em>p</em>), second will specify direction <code>top</code>, <code>bottom</code>, <code>right</code> or <code>left</code> (<em>t</em>, <em>b</em>, <em>r</em>, <em>l</em>), and third one tells us which size to use <code>small</code>, <code>medium</code> or <code>large</code> (<em>s</em>, <em>m</em>, <em>l</em>). And also we can define additional direction letters for <code>horizontal</code> (both left and rigt), <code>vertical</code> (both top and bottom) and <code>all</code> directions (<em>h</em>, <em>v</em>, <em>a</em>).</p>
+    <p>
+      <em>Example: </em><br /> 
+      <code>.pbm</code> - means padding bottom medium == <code>padding-bottom: 15px</code><br />
+      <code>.mbl</code> - means margin bottom large == <code>margin-bottom: 30px</code><br />
+      <code>.mam</code> - means margin all medium == <code>margin: 15px</code><br />
+      <code>.pts</code> - means padding top small == <code>padding-top: 5px</code><br />
+    </p>
+    <p>Defining 3 standard spacings for entire UI helps you stay consistent from page to page and eliminates CSS code duplication. </p>
+
+    <p><strong>Warning!</strong><br /> But pay attention, you should not abuse spaces helpers! Your code should not look like this: </p>
+    <pre><code>&lt;div class="pam mhl mts mbm"&gt;&lt;/div&gt;</code></pre>
+    <p>If you have more than 2 spacing helpers on single html tag, that's obvious signal that you need separate classname for this element, where you'll define all this paddings and margins. Helper classes should actually <strong>help</strong> you build web interfaces, but not make your code hard to read!</p>
+
+</div>

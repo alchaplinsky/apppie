@@ -1,0 +1,82 @@
+<%=  partial "docs/navigation"%>
+<div class="mainbar">
+    <h1>Reset.css</h1>
+    <p>The goal of a reset stylesheet is to reduce browser inconsistencies in things like default line heights, margins and font sizes of headings, and so on. CSS reset is the first stylesheet that should be presented to browser, so it makes browser to play by our rules.</p>
+    <p>There are multiple variations of reset.css and normalize.css al over the web, icluding most popular Minimalistic Reset (setting margins and paddings of all elements to 0), Eric Mayer's reset and Yahoo reset. But most of them are just a starting point, and they should be extended, edited, tweaked to match your specific reset baseline. Reset presented below is a mix of different reset techniques that solve different issues and inconsistencies in browsers behaviour, and it's complete enough to include it to a project and extending step.</p>
+    <em>Block 1: </em>
+    <pre><code class="css">* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-size: 1em;
+}</code></pre>
+  <p><em>Explanation 1:</em> These lines reset <code>padding</code> and <code>margin</code> for all elements on a page. Also it kills the default outline style and sets <code>font-size</code> to 1em, so elements like <code>sup</code>, <code>sub</code>, <code>small</code> and <code>h1..h6</code> will be the same size as a regular text. all font properties for them need to be defined in <code>typography</code> file.</p>
+
+    <em>Block 2: </em>
+    <pre><code class="css">img, iframe, fieldset, object, table {
+  border: none;
+}</code></pre>
+    <p><em>Explanation 2:</em> Here we are killing border for elements that have border by default. Image will appear bordered on a page if it is nested insite a link.</p>
+
+    <em>Block 3: </em>
+    <pre><code class="css">sub, sup {
+  vertical-align: baseline;
+}</code></pre>
+    <p><em>Explanation 3:</em> As soon as we set font size of 1em for <code>sub</code> and <code>sup</code> elements, we should also normalize it's vertical alignment.</p>
+
+    <em>Block 4: </em>
+    <pre><code class="css">caption, th {
+  font-weight: normal;
+  text-align: left;
+}</code></pre>
+    <p><em>Explanation 4:</em> By default table headers <code>thead > th</code> and <code>caption</code> are bold and center aligned. Getting rid of this with code above.</p>
+
+    <em>Block 5: </em>
+    <pre><code class="css">table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}</code></pre>
+    <p><em>Explanation 5:</em> Removing this 'double border' default effect for tables.</p>
+
+    <em>Block 6: </em>
+    <pre><code class="css">td {
+  vertical-align: top;
+}</code></pre>
+    <p><em>Explanation 6:</em> Killing default middle alignment of table cell's content.</p>
+
+    <em>Block 7: </em>
+    <pre><code class="css">th, h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}</code></pre>
+    <p><em>Explanation 7:</em> Setting font weight normal for all headers (they are bold by default) so that we can specify all header styles in typography.</p>
+
+    <em>Block 8: </em>  
+    <pre><code class="css">img {
+  -ms-interpolation-mode: bicubic;
+}</code></pre>
+    <p><em>Explanation 8:</em> If you will use responsive images technique by setting <code>max-width: 100%</code> to images, this will help you with better image rendering in IE.</p>
+
+    <em>Block 9: </em>
+    <pre><code class="css">button, input, select, textarea {
+  margin: 0;
+  font-size: 100%;
+}
+
+button, input {
+  *overflow: visible;
+  line-height: normal;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}</code></pre>
+
+    <p><em>Explanation 9:</em> A set of fixes for form elements wich have different behaviour and look in different browsers. First let's ensure that we get rid of default margins for inputs and selects and setting it's font size to 100% which is the same as regular text. After that we'll handle <code>button</code> and <code>input</code> line-height. And finally remove annoying inner padding that is present in firefox.</p>
+
+    <em>Block 10: </em>
+    <pre><code class="css">article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}</code></pre>
+  <p><em>Explanation 10:</em> HTML5 tags block appearance on the page.</p>
+</div>
