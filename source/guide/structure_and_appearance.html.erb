@@ -1,5 +1,18 @@
 <%=  partial "guide/navigation"%>
 <div class="mainbar">
   <h2>Structure vs. appearance</h2>
-  <p>You would never buy a car which does not allow you to change tyres. </p>
+  <p>You would never buy a car which does not allow you to change tyres. Or appartment where you cannot change the wallpaper.</p>
+  <p>So the point is, structure should be not mixed with appearance.</p>
+  <p>Lets outline some bullet points:</p>
+  <ul>
+    <li>all appearance attributes are prohibited (<code>height</code>, <code>width</code>, <code>bgcolor</code>, <code>color</code> etc.)</li>
+    <li>inline styles are crime against humanity</li>
+    <li>use inline images <strong>ONLY</strong> for content pictures</li>
+    <li>avoid elements that do not carry any content (decorating only)</li>
+    <li>use html tags semantically driven: i.e. tables are for table data</li>
+  </ul>
+  <p>
+    There is a good way to check if your structure is separated. Turn all your CSS files off and look at your page.<br />
+    If it looks like normally structured page, without sudden background images or extra elements, then you are good!
+  </p>
 </div> <!-- /mainbar -->
