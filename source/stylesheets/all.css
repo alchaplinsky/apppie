@@ -199,3 +199,14 @@ pre {
   font-size: 0.8em;
   color: #ccc;
 }
+
+blockquote {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  font-style: italic;
+}
+  

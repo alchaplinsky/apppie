@@ -1,9 +1,21 @@
 <%=  partial "guide/navigation"%>
 <div class="mainbar">
   <h2>Class naming Basics</h2>
-   <p>When you're working on a Web page and need to come up with an identifying name for a div, the natural temptation is to use a name that describes the element's page location or element representation like .horizontal-nav, .left-side, .white-block. These are all valid names for CSS and XHTML classes. They're simple and descriptive, so they serve the purpose of identifying the page element and its corresponding CSS style. But problem is that such names relate to a specific presentation of the content. They reference the position of page elements in a particular page layout, and may be inappropriate and confusing outside the context of that layout.</p>
+  
+  <blockquote>
+    - Granny, what kind of berries are these?<br />
+    - Black currants.<br />
+    - But why they are red?<br />
+    - Because they are green yet.<br />
+  </blockquote>
+  
+   <p>When you're working on a Web page and need to come up with an identifying name for a div, the natural temptation is to use a name that describes the element's page location or element representation like <code>.horizontal-nav</code>, <code>.left-side</code>, <code> .white-block</code>.<br />
+    <span class="auxiliary-text">"OK, now I do markup for this white block"</span><br />
+    These are all valid names for CSS and XHTML classes. They're simple and descriptive, so they serve the purpose of identifying the page element and its corresponding CSS style. But problem is that such names relate to a specific presentation of the content. They reference the position of page elements in a particular page layout, and may be inappropriate and confusing outside the context of that layout.</p>
 
    <p>For example if .white-block someday will be redesigned to have not white background but blue. Will you try to find all on .white-block classes in the project to rename it? Or you'll just specify new background color for current class and leave it alone? In first case it will take some time to find all usages of this class and rename it. And in second you'll have white-block class which adds blue background to block. Isn't it inappropriate? So it is better to avoid such class names.</p>
+   <p>Or if next screen will have another element which has undisputable right to be named as <code>.white-block</code> having that show-white background color?</p>
+   <p>So, to summarize, <strong>try to avoid names attached to element's visual appearance</strong>.</p>
 
    <h2>Structural naming</h2>
 
