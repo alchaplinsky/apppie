@@ -1,0 +1,13 @@
+{
+  "name": "ApplePie",
+  "version": "0.1.0-wip",
+  "author": "Alex Chaplinsky <alchapone@yandex.ru>",
+  "devDependencies": {
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/zurb/foundation/blob/master/LICENSE"
+    }
+  ]
+}
