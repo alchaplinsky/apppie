@@ -1,4 +1,5 @@
-$gutter-space: 10px
+$gutter-space: 0px!default
+$bottom-space: 20px!default
 
 .row
   *zoom: 1
@@ -70,3 +71,16 @@ $gutter-space: 10px
 
 .col5of6
   width: 83.33333%
+
+@media (max-width: 768px)
+  .row-adaptive
+    .col1of2, 
+    .col1of3, .col2of3, 
+    .col1of4, .col2of4, .col3of4,
+    .col1of5, .col2of5, .col3of5, .col4of5,
+    .col1of6, .col2of6, .col3of6, .col4of6, .col5of6
+      width: 100%
+      float: none
+      padding-left: 0
+      padding-right: 0
+      margin-bottom: $bottom-space
