@@ -118,9 +118,9 @@ body {
 }
   
 h1 {
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 300;
-  line-height: 2rem;
+  line-height: 1.5rem;
   text-shadow: 0 1px 0px #fff;
 }
 
@@ -129,6 +129,7 @@ h2 {
   line-height: 2rem;
   font-weight: 300;
   margin-bottom: 10px;
+  color: #000;
   text-shadow: 0 1px 0px #fff;
 }
 
@@ -164,7 +165,7 @@ code {
   color: #657b83;
   background: #f6f5f1;
   border: 1px solid #ededeb;
-  padding: 2px 5px;
+  padding: 1px 5px;
 }
 
 pre {
