@@ -1,10 +1,25 @@
 <div class="sidenav">
-  <ul class="docs-nav">
-    <li><%= link_to "Reset/Normalize", "/framework/reset.html"%></li>
-    <li><%= link_to "Grid", "/framework/grids.html"%></li>
-    <li><%= link_to "Spacings/Helper classes", "/framework/spaces.html"%></li>
-    <li><%= link_to "Typography", "/framework/typography.html"%></li>
-    <li><%= link_to "Mixins", "/framework/mixins.html"%></li>
-    <li><%= link_to "Library", "/framework/library.html"%></li>
-    </ul>
-  </div>
+  <ul>
+    <li>
+      <a href="#" class="item">Base</a>
+      <ul>
+        <li><%= link_to "Reset/Normalize", "/framework/reset.html", class: "subitem"%></li>
+        <li><%= link_to "Grid System", "/framework/grid_system.html", class: "subitem"%></li>
+        <li><%= link_to "Spacings/Helper classes", "/framework/spaces.html", class: "subitem"%></li>
+        <li><%= link_to "Mixins", "/framework/mixins.html", class: "subitem"%></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="item">Typography</a>
+      <ul>
+        <%= link_to "Typography", "/framework/typography.html", class: "subitem"%>
+      </ul>
+    </li>
+    <li class="item">
+      <a href="" class="item">Library</a>
+      <ul>
+        <li><%= link_to "Library", "/framework/library.html", class: "subitem"%></li>
+      </ul>
+    </li>
+  </ul>
+</div>

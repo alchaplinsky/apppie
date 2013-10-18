@@ -1,13 +1,30 @@
 <div class="sidenav">
   <ul class="guide-nav">
-    <li><%= link_to "Coding Style", "/guide/code_style.html" %></li>
-    <li><%= link_to "Naming conventions", "/guide/naming_conventions.html"%></li>
-    <li><%= link_to "Categorizing CSS Rules", "/guide/categorizing_css_rules.html"%></li>
-    <!-- <li><a href="/guide/simplicity_and_modularity.html">Simplicity and Modularity</a></li> -->
-    <li><%= link_to "Objects", "/guide/objects.html"%></li>
-    <li><%= link_to "Modules", "/guide/modules.html"%></li>
-    <!-- <li><a href="/guide/structure_and_appearance.html">Separate Structure and Appearance</a></li> -->
-    <li><%= link_to "Using SASS", "/guide/using_sass.html"%></li>
-    <li><%= link_to "File Organization", "/guide/file_organization.html"%></li>
+    <li>
+      <a href="#" class="item">Introduction</a>
+      <ul>
+        <li><%= link_to "Getting Started", "/guide/getting_started.html", class: "subitem"%></li>
+        <li><%= link_to "OOCSS", "/guide/oocss.html", class: "subitem"%></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="item">Approach</a>
+      <ul>
+        <li><%= link_to "Coding Style", "/guide/code_style.html", class: "subitem" %></li>
+        <li><%= link_to "Naming conventions", "/guide/naming_conventions.html", class: "subitem"%></li>
+        <li><%= link_to "Objects", "/guide/objects.html", class: "subitem"%></li>
+        <li><%= link_to "Modules", "/guide/modules.html", class: "subitem"%></li> 
+        <li><%= link_to "Simplicity", "", class: "subitem"%></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="item">Organization</a>
+      <ul>
+        <li><%= link_to "Categorizing CSS Rules", "/guide/categorizing_css_rules.html", class: "subitem"%></li>
+        <li><%= link_to "Using SASS", "/guide/using_sass.html", class: "subitem"%></li>
+        <li><%= link_to "File Organization", "/guide/file_organization.html", class: "subitem"%></li>
+        <li><%= link_to "Responsive desing", "", class: "subitem"%></li>
+      </ul>
+    </li>
   </ul>
 </div>

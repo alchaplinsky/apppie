@@ -34,21 +34,17 @@ body
   list-style: none
   float: right
 
-
 .navigation li 
   float: left
   padding: 10px 15px
-
 
 .navigation li a 
   display: inline-block
   color: #797979
   padding: 6px 8px
 
-
 .navigation li a:hover 
   color: #f2836b
-
 
 .navigation li a.current 
   background: #f2836b
@@ -60,32 +56,33 @@ body
   padding: 30px 0
   background: image-url('background.jpg') 0 center
 
-
 .sidenav 
   border: 1px solid #eaeaea
-  background: #f7f7f7
   position: fixed
   width: 240px
   top: 70px
   left: 20px
 
-
 .sidenav ul 
   list-style: none
   font-size: 14px
   margin: 0
-
-
-.sidenav a 
-  display: block
-  padding: 7px 15px
-  color: #555
-  border-bottom: 1px solid rgba(0, 0, 0,.05)
-
-
-.sidenav a:hover 
-  transition: all .2s linear
-  background: #f0f0f0
+  a
+    display: block
+    padding: 5px 15px
+    border-bottom: 1px solid rgba(0, 0, 0,.05)
+    &:hover
+      transition: all .2s linear
+      background: #f0f0f0
+  .item
+    background: #f7f7f7
+    color: #555
+  .subitem
+    color: #555
+    padding-left: 25px
+    background: #fefefe
+    &:hover
+      background: #fafafa
 
 
 .mainbar 
