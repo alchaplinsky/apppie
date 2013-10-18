@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ApplePie CSS</title>
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="../stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/icons.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <a href="/"><img src="/images/logo.png" alt="" class="left" /></a>
+        <h2 class="left pts">ApplePie CSS</h2>
+        <ul class="navigation">
+          <li><a href="/" class="start">Getting started</a></li>
+          <li><a href="/guide/code_style.html" class="guide">Style Guide</a></li>
+          <li><a href="/framework/reset.html" class="framework">Framework</a></li>
+          <li><a href="/library">Components</a></li>
+        </ul>
+      </div>
+      <div class="content">
+          <div class="sidenav">
+  <ul class="guide-nav">
+    <li><a href="/guide/code_style.html">Coding Style</a></li>
+    <li><a href="/guide/naming_conventions.html">Naming conventions</a></li>
+    <li><a href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
+    <!-- <li><a href="/guide/simplicity_and_modularity.html">Simplicity and Modularity</a></li> -->
+    <li><a href="/guide/objects.html">Objects</a></li>
+    <li><a href="/guide/modules.html">Modules</a></li>
+    <!-- <li><a href="/guide/structure_and_appearance.html">Separate Structure and Appearance</a></li> -->
+    <li><a href="/guide/using_sass.html">Using SASS</a></li>
+    <li><a href="/guide/file_organization.html">File Organization</a></li>
+  </ul>
+</div>
+<div class="mainbar">
+  <h1>File Organization</h1>
+  <p>In general, the CSS file organization in rails app should follow something like this:</p>
+  <pre><code>stylesheets
+  ├── base
+  │   ├── mixins.sass
+  │   ├── reset.sass
+  │   ├── grids.sass
+  │   ├── spaces.sass
+  │   └── helpers.scss
+  ├── application.sass
+  ├── application
+  │   ├── layout.sass
+  │   ├── typography.sass
+  │   ├── modules
+  │   |   ├── buttons.sass
+  │   |   ├── forms.sass
+  |   |   └── ..........
+  │   ├── sections
+  │   |   ├── profile.sass
+  │   |   ├── dashboard.sass
+  |   |   └── ..........
+  │   └── responsive
+  │       ├── tablet.sass
+  │       ├── mobile.sass
+  |       └── ..........
+  └── shared
+      ├── popup.scss
+      ├── markdown.scss
+      └── ..........</code></pre>
+    <p><strong>base</strong> folder contains almost unchangeable base styles for the project. These are mixins (if you use sass), reset, grids, spaces, fonts (for including custom fonts) and utils (util css classes for text align and positioning)</p>
+
+  <p><strong>application.css</strong> manifest file which defines what files should be included. Manifest is that it has the same name as rails layout file <code>app/views/layouts/application.html.erb</code>. It is likely you'll need to create more manifests for each rails layout you have in the app, because they might look different and have different styles.</p>
+
+  <p><strong>application</strong> folder is named after sass manifest, and contains all the styles (except base, shared and responsive) that are used in application layout. It includes layout styles, modules, sections, typography etc.</p>
+
+  <p><strong>shared</strong> contains styles that need to be shared between different layouts. For instance you have 2 <code>layouts/application.html.erb</code> and <code>layouts/landing.html.erb</code>, so you should create <em>application</em> and <em>landing</em> folders under <em>stylesheets</em> directory as well as <code>application.sass</code> and <code>landing.sass</code> manifests. And if you use the same styles for markdown formatting in both of them, you should place them into <em>shared</em> folder.</p>
+
+  <p><strong>application/layout.sass</strong> Here we define layout structure and representation. </p>
+
+  <p><strong>application/typography.sass</strong> Here is the file where custom fonts are included and all text styles are defined. Font family and fonts sizes for paragraphs and headings, link styles and behaviour etc.</p>
+
+  <p><strong>application/modules</strong> All UI objects go here. Each object or group of similar objects in a separate file.</p>
+
+  <p><strong>application/sections</strong> Place for all structures, that aren't basicaly objects, but define some blocks or structures containing objects.</p>
+
+  <p><strong>application/responsive</strong> Folder for all the responsive styles (media queries should go).</p>
+</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div>Designed and built at <a href="" class="railsware">Railsware</a><br /> Code licensed under MIT License</div>
+      </div>
+    </div>
+  </body>
+</html>

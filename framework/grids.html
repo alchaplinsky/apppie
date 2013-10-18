@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ApplePie CSS</title>
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="../stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/icons.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <a href="/"><img src="/images/logo.png" alt="" class="left" /></a>
+        <h2 class="left pts">ApplePie CSS</h2>
+        <ul class="navigation">
+          <li><a href="/" class="start">Getting started</a></li>
+          <li><a href="/guide/code_style.html" class="guide">Style Guide</a></li>
+          <li><a href="/framework/reset.html" class="framework">Framework</a></li>
+          <li><a href="/library">Components</a></li>
+        </ul>
+      </div>
+      <div class="content">
+          <div class="sidenav">
+  <ul class="docs-nav">
+    <li><a href="/framework/reset.html">Reset/Normalize</a>
+    <li><a href="/framework/grids.html">Grids</a></li>
+    <li><a href="/framework/spaces.html">Spacings/Helper classes</a></li>
+    <li><a href="/framework/typography.html">Typography</a></li>
+    <li><a href="/framework/mixins.html">Mixins</a></li>
+    <li><a href="/framework/library.html">Library</a></li>
+    </ul>
+  </div><div class="mainbar">
+    <h1 class="mbs">Grids</h1>
+
+    <p>Grids system is a way to break any space into fractions, to make layout on a page cohesive. Grids like a lattice divides horizontal space in consistent columns where text, images, elements can be placed. Vertical space is controlled by height of content.</p>
+    <p>A lot of different grid frameworks are created, which fit different needs, but this grid system has certain benefits:</p>
+    <ul class="mbm">
+      <li>grid is defined in one place</li>
+      <li>it is reusable</li>
+      <li>it is efficient</li>
+      <li>simple class naming</li>
+      <li>grids are adaptive, we don't use fixed width</li>
+      <li>no predefined spaces</li>
+      <li>grids are nested</li>
+      <li>consistent behaviour across all common browsers</li>
+    </ul>
+    <h2 class="mbs">Grid is defined in one place</h2>
+    <p class="mbm">All grids styles gathered in one small document grids.css in folder "base" including other css files with predefined styles. That reduces the amount of CSS and markup you need to duplicate each time you start a new project.</p> 
+    <h2 class="mbs">Grid is efficient</h2>
+    <p>Grids system is built using columns, where column is the smallest unit of measurement. Predefined to element's class property float makes the element simply fall into place on the page. All elements are wrapped in <code>div</code> with class <code>.row</code>. The parent element will collapse to zero height since it has only floated children. It should be fixed by clearing it.</p>
+      <pre><code>.row:after {
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden; 
+}</code></pre>
+    <p class="mbm">Relative sized grids can be created by dividing an element into halves, thirds, fourths, or fifths. Maximum 6 columns grid is used when design layout. Column width is assigned by CSS class.</p>
+    <h2 class="mbs">Simple class naming</h2>
+    <p>Simple name classes are used in grids. Class names indicates the fractional width of the column in %, for example <code>.col1of3</code> would take up one quarter, or 33.33333%, of the horizontal space. The following fractions are supported: col1of2, .col1of3, .col2of3, .col1of4, .col2of4, .col3of4, .col1of5, .col2of5, .col3of5, .col4of5, .col1of6, .col2of6, .col3of6, .col4of6, .col5of6.</p> 
+    <p class="mbm">Classnames shouldn't have any additional info about grids, like align or spacings.</p>
+    <h2 class="mbs">Grids don't use fixed width'</h2>
+    <p>Layout should be abstracted and not contain elements with fixed width. Wrapped elements of higher level should define widths of inside components. So width of columns can be defined using % of parent <code>div</code>.</p> 
+    <pre class="mbm"><code>.col1of2, .col2of4, .col3of6 {
+  width: 50%; 
+}
+
+.col1of3, .col2of6 {
+  width: 33.33333%; 
+}
+
+.col2of3, .col4of6 {
+  width: 66.66666%; 
+}
+
+.col1of4 {
+  width: 25%; 
+}
+
+.col3of4 {
+  width: 75%; 
+}
+
+.col1of5 {
+  width: 20%; 
+}
+
+.col2of5 {
+  width: 40%; 
+}
+
+.col3of5 {
+ width: 60%; 
+}
+
+.col4of5 {
+  width: 80%; 
+}
+
+.col1of6 {
+  width: 16.66666%; 
+}
+
+.col5of6 {
+  width: 83.33333%; 
+}</code></pre>
+    <h2 class="mbs">No predefined spaces</h2>
+    <p>Property box-sizing is used so all spaces inside grid were optional. When we set a width to element, that element stays that width, despite padding or borders being applied.</p>
+    <pre class="mbm"><code>.col1of2,
+.col1of3, .col2of3,
+.col1of4, .col2of4, .col3of4,
+.col1of5, .col2of5, .col3of5, .col4of5,
+.col1of6, .col2of6, .col3of6, .col4of6, .col5of6 {
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+}</code></pre>
+    <h2 class="mbs">Grids are nested</h2>
+    <p class="mbm">Complicated layouts can be built without creating a lot of custom elements.. A column can contain another <code>.row</code> with a lot of columns inside or it can contain other objects directly. How deep and complicated are grids depents on designs, but there is no need to create new classes. The sum of the fractional sizes of all children of one <code>.row</code> should be equal to one. Grids control width, content controls height.</p>
+    <h2>Some examples of using grids</h2>
+    <div class="row example">
+      <div class="col1of6">col1of6</div>
+      <div class="col1of6">col1of6</div>
+      <div class="col1of6">col1of6</div>
+      <div class="col1of6">col1of6</div>
+      <div class="col1of6">col1of6</div>
+      <div class="col1of6">col1of6</div>
+    </div>
+    <div class="row example">
+      <div class="col1of5">col1of5</div>
+      <div class="col1of5">col1of5</div>
+      <div class="col1of5">col1of5</div>
+      <div class="col1of5">col1of5</div>
+      <div class="col1of5">col1of5</div>
+    </div>
+    <div class="row example">
+      <div class="col1of4">col1of4</div>
+      <div class="col1of4">col1of4</div>
+      <div class="col1of4">col1of4</div>
+      <div class="col1of4">col1of4</div>
+    </div>
+    <div class="row example">
+      <div class="col1of3">col1of3</div>
+      <div class="col1of3">col1of3</div>
+      <div class="col1of3">col1of3</div>
+    </div>
+    <div class="row example">
+      <div class="col1of2">col1of2</div>
+      <div class="col1of2">col1of2</div>
+    </div>
+    <div class="row example">
+      <div class="col1of6">col1of6</div>
+      <div class="col5of6">col5of6</div>
+    </div>
+    <div class="row example">
+      <div class="col2of5">col2of5</div>
+      <div class="col3of5">col3of5</div>
+    </div>
+    <p>
+      Grids can be successfully combined or extended.<br/>
+      Combination is useful for getting fractions less than 1/6. I.e. nested half-size columns.
+    </p>
+    <div class="row example">
+      <div class="col1of6 pan no-outline">
+        <div class="col1of2">
+          1of12
+        </div> <!-- /col1of2 -->
+        <div class="col1of2">
+          1of12
+        </div> <!-- /col1of2 -->
+      </div>
+      <div class="col5of6">col5of6</div>
+    </div>
+    <p>Many apps can contain calendar table markup which makes you think about 7 columns grid extension:</p>
+    <pre><code>.col1of7 {
+  width: 14.28571%
+}</code></pre>
+    <div class="row example">
+      <div class="col1of7">Sunday</div>
+      <div class="col1of7">Monday</div>
+      <div class="col1of7">Tuesday</div>
+      <div class="col1of7">Wednesday</div>
+      <div class="col1of7">Thursday</div>
+      <div class="col1of7">Friday</div>
+      <div class="col1of7">Saturday</div>
+    </div>
+    <p class="auxiliary-text">
+      Info used from http://css-tricks.com/dont-overthink-it-grids/
+
+    </p>
+</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div>Designed and built at <a href="" class="railsware">Railsware</a><br /> Code licensed under MIT License</div>
+      </div>
+    </div>
+  </body>
+</html>

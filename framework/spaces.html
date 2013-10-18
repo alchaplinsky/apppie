@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ApplePie CSS</title>
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="../stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/icons.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <a href="/"><img src="/images/logo.png" alt="" class="left" /></a>
+        <h2 class="left pts">ApplePie CSS</h2>
+        <ul class="navigation">
+          <li><a href="/" class="start">Getting started</a></li>
+          <li><a href="/guide/code_style.html" class="guide">Style Guide</a></li>
+          <li><a href="/framework/reset.html" class="framework">Framework</a></li>
+          <li><a href="/library">Components</a></li>
+        </ul>
+      </div>
+      <div class="content">
+          <div class="sidenav">
+  <ul class="docs-nav">
+    <li><a href="/framework/reset.html">Reset/Normalize</a>
+    <li><a href="/framework/grids.html">Grids</a></li>
+    <li><a href="/framework/spaces.html">Spacings/Helper classes</a></li>
+    <li><a href="/framework/typography.html">Typography</a></li>
+    <li><a href="/framework/mixins.html">Mixins</a></li>
+    <li><a href="/framework/library.html">Library</a></li>
+    </ul>
+  </div><div class="mainbar">
+    <h1>Spacings</h1>
+    <p><strong>Spacings</strong> - is pretty simple concept that can be used in absolutely every project. It allows you to get rid of multiple <code>margin</code> and <code>padding</code> rules in your css code.</strong></p>
+    <p>If you find yorself writing <code>margin-bottom: 20px</code> for about dozen of times - you might need helper class for it. This means that you have pretty standard bottom spacing (margin) for UI objects, and that's good! That's consistency in design but, that is duplication in code. The same with inner paddings of different blocks and left or right spacings between buttons - all this should be consistent. And we can use helper classes for this, so we don't need to rewrite all this rules in CSS code for hundreds of times.</p>
+    <p>Let's define 3 different space sizes, let's say <code>small: 5px</code>, <code>medium: 15px</code> and <code>large: 30px</code> and create helper classes for them. Naming is pretty simple and inpuitive: Each class name will consist of three letters, first one defines if it is <code>margin</code> or <code>padding</code>(<em>m</em> or <em>p</em>), second will specify direction <code>top</code>, <code>bottom</code>, <code>right</code> or <code>left</code> (<em>t</em>, <em>b</em>, <em>r</em>, <em>l</em>), and third one tells us which size to use <code>small</code>, <code>medium</code> or <code>large</code> (<em>s</em>, <em>m</em>, <em>l</em>). And also we can define additional direction letters for <code>horizontal</code> (both left and rigt), <code>vertical</code> (both top and bottom) and <code>all</code> directions (<em>h</em>, <em>v</em>, <em>a</em>).</p>
+    <p>
+      <em>Example: </em><br /> 
+      <code>.pbm</code> - means padding bottom medium == <code>padding-bottom: 15px</code><br />
+      <code>.mbl</code> - means margin bottom large == <code>margin-bottom: 30px</code><br />
+      <code>.mam</code> - means margin all medium == <code>margin: 15px</code><br />
+      <code>.pts</code> - means padding top small == <code>padding-top: 5px</code><br />
+    </p>
+    <p>Defining 3 standard spacings for entire UI helps you stay consistent from page to page and eliminates CSS code duplication. </p>
+
+    <p><strong>Warning!</strong><br /> But pay attention, you should not abuse spaces helpers! Your code should not look like this: </p>
+    <pre><code>&lt;div class="pam mhl mts mbm"&gt;&lt;/div&gt;</code></pre>
+    <p>If you have more than 2 spacing helpers on single html tag, that's obvious signal that you need separate classname for this element, where you'll define all this paddings and margins. Helper classes should actually <strong>help</strong> you build web interfaces, but not make your code hard to read!</p>
+
+</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div>Designed and built at <a href="" class="railsware">Railsware</a><br /> Code licensed under MIT License</div>
+      </div>
+    </div>
+  </body>
+</html>

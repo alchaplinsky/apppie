@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ApplePie CSS</title>
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="../stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/icons.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <a href="/"><img src="/images/logo.png" alt="" class="left" /></a>
+        <h2 class="left pts">ApplePie CSS</h2>
+        <ul class="navigation">
+          <li><a href="/" class="start">Getting started</a></li>
+          <li><a href="/guide/code_style.html" class="guide">Style Guide</a></li>
+          <li><a href="/framework/reset.html" class="framework">Framework</a></li>
+          <li><a href="/library">Components</a></li>
+        </ul>
+      </div>
+      <div class="content">
+          <div class="sidenav">
+  <ul class="guide-nav">
+    <li><a href="/guide/code_style.html">Coding Style</a></li>
+    <li><a href="/guide/naming_conventions.html">Naming conventions</a></li>
+    <li><a href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
+    <!-- <li><a href="/guide/simplicity_and_modularity.html">Simplicity and Modularity</a></li> -->
+    <li><a href="/guide/objects.html">Objects</a></li>
+    <li><a href="/guide/modules.html">Modules</a></li>
+    <!-- <li><a href="/guide/structure_and_appearance.html">Separate Structure and Appearance</a></li> -->
+    <li><a href="/guide/using_sass.html">Using SASS</a></li>
+    <li><a href="/guide/file_organization.html">File Organization</a></li>
+  </ul>
+</div><div class="mainbar">
+  <h2>Structure vs. appearance</h2>
+  <p>You would never buy a car which does not allow you to change tyres. Or appartment where you cannot change the wallpaper.</p>
+  <p>So the point is, structure should be not mixed with appearance.</p>
+  <p>Lets outline some bullet points:</p>
+  <ul>
+    <li>all appearance attributes are prohibited (<code>height</code>, <code>width</code>, <code>bgcolor</code>, <code>color</code> etc.)</li>
+    <li>inline styles are crime against humanity</li>
+    <li>use inline images <strong>ONLY</strong> for content pictures</li>
+    <li>avoid elements that do not carry any content (decorating only)</li>
+    <li>use html tags semantically driven: i.e. tables are for table data</li>
+  </ul>
+  <p>
+    There is a good way to check if your structure is separated. Turn all your CSS files off and look at your page.<br />
+    If it looks like normally structured page, without sudden background images or extra elements, then you are good!
+  </p>
+</div> <!-- /mainbar -->
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div>Designed and built at <a href="" class="railsware">Railsware</a><br /> Code licensed under MIT License</div>
+      </div>
+    </div>
+  </body>
+</html>
