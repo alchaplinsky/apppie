@@ -16,13 +16,15 @@
   <body>
     <div class="wrapper">
       <div class="header">
-        <%= link_to image_tag("logo.png", class: 'left'), "/" %>
-        <h2 class="left pts">ApplePie CSS</h2>
+        <a href="/">
+          <%= image_tag("logo.png", class: 'left') %>
+          <h2 class="left pts">ApplePie CSS</h2>
+        </a>
         <ul class="navigation">
-          <li><%= link_to "Getting started", ""%></li>
-          <li><%= link_to "Style Guide", "guide/code_style.html" %></li>
-          <li><a href="/framework/reset.html" class="framework">Framework</a></li>
-          <li><a href="/library">Components</a></li>
+          <li><%= link_to "Getting started", "/"%></li>
+          <li><%= link_to "Style Guide", "/guide/code_style.html" %></li>
+          <li><%= link_to "Framework", "/framework/reset.html" %></li>
+          <li><%= link_to "Components", "/components" %></li>
         </ul>
       </div>
       <div class="content">
@@ -31,7 +33,7 @@
     </div>
     <div class="footer">
       <div class="container">
-        <div>Designed and built at <a href="" class="railsware">Railsware</a><br /> Code licensed under MIT License</div>
+        <div>Designed and built at <a href="http://railsware.com" class="railsware">Railsware</a><br /> Code licensed under MIT License</div>
       </div>
     </div>
   </body>
