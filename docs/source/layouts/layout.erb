@@ -16,11 +16,11 @@
   <body>
     <div class="wrapper">
       <div class="header">
-        <a href="/"><img src="/images/logo.png" alt="" class="left" /></a>
+        <%= link_to image_tag("logo.png", class: 'left'), "/" %>
         <h2 class="left pts">ApplePie CSS</h2>
         <ul class="navigation">
-          <li><a href="/" class="start">Getting started</a></li>
-          <li><a href="/guide/code_style.html" class="guide">Style Guide</a></li>
+          <li><%= link_to "Getting started", ""%></li>
+          <li><%= link_to "Style Guide", "guide/code_style.html" %></li>
           <li><a href="/framework/reset.html" class="framework">Framework</a></li>
           <li><a href="/library">Components</a></li>
         </ul>
