@@ -8,7 +8,8 @@ module.exports = (grunt) ->
     # dirs
     dirs:
       cssTmp: "tmp/stylesheets"
-      dist: "dist/<%= pkg.version %>"
+      distFolder: "dist"
+      dist: "<%= dirs.distFolder %>/<%= pkg.version %>"
 
     # Before generating any new files, remove any previously-created files.
     clean:
@@ -19,20 +20,30 @@ module.exports = (grunt) ->
       options:
         stripBanners: true
         banner: '/*! <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> | <%= pkg.licenses[0].type %> */\n'
-      basic:
+      css:
         src: [
           "<%= dirs.cssTmp %>/mixins/all.css",
           "<%= dirs.cssTmp %>/base/all.css",
           "<%= dirs.cssTmp %>/typography.css",
           "<%= dirs.cssTmp %>/library.css"
         ]
-        dest: "<%= dirs.dist %>/<%= pkg.name %>.css"
+        dest: "<%= dirs.dist %>/css/<%= pkg.name %>.css"
 
     # min css
     cssmin:
       combine:
         files:
-          "<%= dirs.dist %>/<%= pkg.name %>.min.css": "<%= dirs.dist %>/<%= pkg.name %>.css"
+          "<%= dirs.dist %>/css/<%= pkg.name %>.min.css": "<%= dirs.dist %>/css/<%= pkg.name %>.css"
+
+    # copy
+    copy:
+      sass:
+        files: [
+          expand: true
+          cwd: "src/stylesheets"
+          src: ['**/*.sass']
+          dest: "<%= dirs.dist %>/sass"
+        ]
 
     # sass options
     sass:
@@ -44,6 +55,20 @@ module.exports = (grunt) ->
           dest: "<%= dirs.cssTmp %>"
           ext: ".css"
         ]
+
+    #gzip assets 1-to-1 for production
+    compress:
+      release:
+        options:
+          mode: "zip"
+          archive: "<%= pkg.name %>-<%= pkg.version %>.zip"
+        files: [
+          expand: true
+          cwd: "<%= dirs.dist %>/"
+          src: ['**/*']
+          dest: "<%= dirs.distFolder %>/"
+        ]
+
 
     # watch
     watch:
@@ -63,14 +88,19 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-cssmin"
+  grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-contrib-watch"
+  grunt.loadNpmTasks "grunt-contrib-compress"
 
   # Whenever the "test" task is run, first clean the "tmp" dir, then run this
   # plugin's task(s), then test the result.
   grunt.registerTask "test", ["clean", "coffee"]
 
   # dev
-  grunt.registerTask "dev", ["clean", "sass", "concat", "cssmin"]
+  grunt.registerTask "dev", ["clean", "sass", "concat", "cssmin", "copy"]
+
+  # release
+  #grunt.registerTask "release", ["dev", "compress"]
 
   # By default, lint and run all tests.
   grunt.registerTask "default", ["watch"]
