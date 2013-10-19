@@ -1,13 +1,28 @@
 {
   "name": "ApplePie",
-  "version": "0.1.0-wip",
-  "author": "Alex Chaplinsky <alchapone@yandex.ru>",
+  "description": "",
+  "keywords": ["apple", "pie", "html5", "css3"],
+  "version": "0.1.0",
+  "bugs": {
+    "url" : "https://github.com/alchapone/applepie/issues",
+    "email" : "alchapone@yandex.ru"
+  },
+  "author": {
+    "name": "Alex Chaplinsky",
+    "email": "alchapone@yandex.ru",
+    "url": "http://alchapone.name/"
+  },
+  "contributors": {
+    "name": "Alexey Vasiliev",
+    "email": "leopard_ne@inbox.ru",
+    "url": "http://leopard.in.ua/"
+  },
   "devDependencies": {
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/zurb/foundation/blob/master/LICENSE"
+      "url": "https://github.com/alchapone/applepie/blob/master/LICENSE"
     }
   ]
 }
