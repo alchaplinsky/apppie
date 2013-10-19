@@ -13,7 +13,7 @@ module.exports = (grunt) ->
 
     # Before generating any new files, remove any previously-created files.
     clean:
-      tests: ["tmp/stylesheets"]
+      tests: ["tmp", "<%= dirs.distFolder %>"]
 
     # concat
     concat:
