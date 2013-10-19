@@ -22,9 +22,12 @@
   <p>If you don't need element visually to stretch to 100% of a parent's width - wrap it with grid. If grid sizes are not enough - create custom wrapper blocks with prorotions you need (17%, 44%, etc.) and let element stretch to width of wrapper. But do not specify fixed width in pixels.</p>
   
    <strong>Do not specify fixed height for elements</strong>
-   <p></p>
-   <p>No fixed height, height of the element should be defined by content.</p>
+   <p>All structures and containers should be flexible and stretchable, because you never know how large dynamic content will be placed inside. If you specify fixed height for a block and insert a large ammount of text inside, text will overflow container and it will look like UI bug. It is better idea to let container stretch verticaly after the content. So content defines height of parent container.</p>
+   <p>If you need to have exact height of an element for instance <code>.header</code> and you are sure that it will contain only a single line of text, use a combination of <code>line-height</code> and <code>padding</code> to set right height.</p>
+   <p>For example your header should have height of 40px, you can do next thing:</p>
+   <pre><code>.navigation {
+  line-height: 16px;
+  padding: 12px 0;   
+}</code></pre>
 
-   <h2>Location dependent styles</h2>
-   <p></p>
 </div> <!-- /mainbar -->
