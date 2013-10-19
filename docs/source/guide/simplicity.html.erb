@@ -2,7 +2,17 @@
 <div class="mainbar">
   <h1>Simplicity</h1>
   <h2>Keep it as simple as possible simple</h2>
-   <p>UI elements should be designed to include the minimum footprint of an element.  Try to avoid lots of nested elements or wrapper elements that are needed only for styling.  If extra styling is needed, consider using pseudo selectors :after and :before.</p>
+  <strong>Keep containers to a minimum</strong>
+  <p>UI elements should be designed to include the minimum footprint of an element. Try to avoid lots of nested elements or wrapper elements that are needed only for styling. If extra styling is needed, consider using pseudo selectors <code>:after</code> and <code>:before</code>.</p>
+  
+  <strong>Keep selectors to a minimum</strong>
+  <p>Avoid unnecessary selectors. Using less selectors will mean less selectors will be needed to override any particular style — that means it’s easier to troubleshoot.</p>
+  
+  <strong>Keep properties to a minimum</strong>
+  <p>Work smarter, not harder with CSS. Under this rule, there are a number of subrules: if there isn’t a point to adding a CSS property, don’t add it; if you’re not sure why you’re adding a CSS property, don’t add; and if you feel like you’ve added the same property in lots of places, figure out how to add it in only one place.</p>
+  
+  <strong>Keep CSS hacks to a minimum</strong>
+  <p>Don’t use hacks unless its a known and documented bug.  If you find that you are looking for a hack to fix a certain issue in your design then first do some research (Google is your friend here) and try to identify the issue you are having problems with.</p>
 
    <h2>Avoid fixed sizes</h2>
    <p>No fixed width, width of an element should be defined by parent. No fixed height, height of the element should be defined by content.</p>
