@@ -3,28 +3,23 @@
   <h1>Naming conventions</h1>
   <p>Any name would technically work, but a poorly chosen name will cause confusion and likely haunt your project moving forward. A good name will make for more understandable code and make things easier for all. HTML/CSS classes are absolutely one of those things with which naming is important.</p>
   <p>Naming conventions for classes are the major part of what a methodology like <a href="http://bem.info/">BEM</a>, or <a href="https://github.com/stubbornella/oocss">OOCSS</a> provides. So there are common basic guidelines to keep CSS code simple, performant and reusable.</p>
-  <ol>
-    <li>
-      <strong>Use semantic class names to keep HTML semantic and easy to read.</strong>
-      <p>Semantic naming helps developers to easily read and understand code. For instance class names like <code>.button</code> and <code>.submit-buttom</code> are more intuitive than <code>.btn-sm</code> or <code>.bnt-lrg</code>. And HTML looks prettier and more semantic.</p>
-      <p>Use names that are intuitive to you. Ask yourself, “If I asked another front-end developer working in a project what this class is for, would he automatically know?” That’s like programming, naming variables intuitively so that other programmers will know what the variable holds ($total instead of $t) – and that lesson is applicable to CSS naming conventions.</p>
-    </li>
-    <li>
-      <strong>Names of elements should describe what they are, but not how they look.</strong>
-      <p>The goal is for all markup to relate information about the document's structure rather than its presentation. It is a bad practice to use names like <code>.white-block</code>, because if someday it is redesigned to have blue background you're not likely to find all <code>.white-block</code> classes in the project to rename it? Instead of this you just specify new background color for existing class name and as a result you'll get:</p>
-      <pre><code>.white-block {
+  <h2>Use semantic class names to keep HTML semantic and easy to read.</h2>
+  <p>Semantic naming helps developers to easily read and understand code. For instance class names like <code>.button</code> and <code>.submit-buttom</code> are more intuitive than <code>.btn-sm</code> or <code>.bnt-lrg</code>. And HTML looks prettier and more semantic.</p>
+  <p>Use names that are intuitive to you. Ask yourself, “If I asked another front-end developer working in a project what this class is for, would he automatically know?” That’s like programming, naming variables intuitively so that other programmers will know what the variable holds ($total instead of $t) – and that lesson is applicable to CSS naming conventions.</p>
+
+  <h2>Names of elements should describe what they are, but not how they look.</h2>
+  <p>The goal is for all markup to relate information about the document's structure rather than its presentation. It is a bad practice to use names like <code>.white-block</code>, because if someday it is redesigned to have blue background you're not likely to find all <code>.white-block</code> classes in the project to rename it? Instead of this you just specify new background color for existing class name and as a result you'll get:</p>
+  <pre><code>.white-block {
   background: blue;
 }</code></pre>
-    <p>Isn't it inappropriate?</p>
-    </li>
-    <li>
-      <strong>Do not use names that describe element positioning.</strong>
-      <p>While working on project you may come up with class names like <code>.footer-block</code> or <code>.left-side</code>. But that's bad decision to use names that rely on location, because you never know when you have to place element or add similar element to another place on a page. It would be really strange to meet <code>.footer-block</code> somewhere outside footer. But that happens quite often because we are all willing to reuse existing and not writing new code.</p>
-    </li>
-    <li>
-      <strong>Keep class names as simple as possible.</strong>
-      <p>Use simple and intuitive definitions as class names. If you are building a navigation, there's no need to create some complex class name for this, like <code>.top-nav-bar</code> or <code>.primary-navigation</code>, just use general definition <code>.navigation</code>. Of course if you have two or more navigations you can have conflicts in your code if you use one class name for both of them.</p>
-      <p>You can solve this by using different class names like <code>.navigation</code> and <code>.subnavigation</code>. But if these two navigations are both semanticaly on same level and none of them is actually a subnavigation, in that case it can be a good idea to make <code>.navigation</code> class location dependent. You can use location of navigation to controll it's appearence:</p>
+  <p>Isn't it inappropriate?</p>
+
+  <h2>Do not use names that describe element positioning.</h2>
+  <p>While working on project you may come up with class names like <code>.footer-block</code> or <code>.left-side</code>. But that's bad decision to use names that rely on location, because you never know when you have to place element or add similar element to another place on a page. It would be really strange to meet <code>.footer-block</code> somewhere outside footer. But that happens quite often because we are all willing to reuse existing and not writing new code.</p>
+
+  <h2>Keep class names as simple as possible.</h2>
+  <p>Use simple and intuitive definitions as class names. If you are building a navigation, there's no need to create some complex class name for this, like <code>.top-nav-bar</code> or <code>.primary-navigation</code>, just use general definition <code>.navigation</code>. Of course if you have two or more navigations you can have conflicts in your code if you use one class name for both of them.</p>
+  <p>You can solve this by using different class names like <code>.navigation</code> and <code>.subnavigation</code>. But if these two navigations are both semanticaly on same level and none of them is actually a subnavigation, in that case it can be a good idea to make <code>.navigation</code> class location dependent. You can use location of navigation to controll it's appearence:</p>
       <pre><code>.header .navigation {
   color: #333;
 }
@@ -33,6 +28,4 @@
   color: #fff;
 }</code></pre>
 
-    </li>
-  </ol>
 </div>
