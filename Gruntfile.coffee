@@ -8,7 +8,7 @@ module.exports = (grunt) ->
     # dirs
     dirs:
       cssTmp: "tmp/stylesheets"
-      dist: "dist/<%= pkg.name %>/<%= pkg.version %>"
+      dist: "dist/<%= pkg.version %>"
 
     # Before generating any new files, remove any previously-created files.
     clean:
