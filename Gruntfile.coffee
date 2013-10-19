@@ -61,12 +61,12 @@ module.exports = (grunt) ->
       release:
         options:
           mode: "zip"
-          archive: "<%= pkg.name %>-<%= pkg.version %>.zip"
+          archive: "<%= dirs.distFolder %>/<%= pkg.name %>-<%= pkg.version %>.zip"
         files: [
           expand: true
-          cwd: "<%= dirs.dist %>/"
+          cwd: "<%= dirs.dist %>"
           src: ['**/*']
-          dest: "<%= dirs.distFolder %>/"
+          dest: "<%= pkg.name %>-<%= pkg.version %>/"
         ]
 
 
@@ -100,7 +100,7 @@ module.exports = (grunt) ->
   grunt.registerTask "dev", ["clean", "sass", "concat", "cssmin", "copy"]
 
   # release
-  #grunt.registerTask "release", ["dev", "compress"]
+  grunt.registerTask "release", ["dev", "compress"]
 
   # By default, lint and run all tests.
   grunt.registerTask "default", ["watch"]
