@@ -4,7 +4,7 @@
   <h2>Keep it as simple as possible simple</h2>
   <p>This may sound obvious but if you find yourself using complicated coding to achieve your design then you should think again about whether the feature you need is really necessary or if you’re just thinking about your design and not your visitors. Complex code is usually the result of muddled thinking. Plan your structure logically and work from the outside in and from the top down where possible.</p>
   
-  <strong>Keep containers to a minimum</strong>
+  <strong>Keep containers to a minimum. Avoid deep nesting</strong>
   <p>UI elements should be designed to include the minimum footprint of an element. Try to avoid lots of nested elements or wrapper elements that are needed only for styling. If extra styling is needed, consider using pseudo selectors <code>:after</code> and <code>:before</code>.</p>
   
   <strong>Keep selectors to a minimum</strong>
@@ -16,9 +16,14 @@
   <strong>Keep CSS hacks to a minimum</strong>
   <p>Don’t use hacks unless its a known and documented bug. If you find that you are looking for a hack to fix a certain issue in your design then first do some research (Google is your friend here) and try to identify the issue you are having problems with.</p>
 
-   <h2>Avoid fixed sizes</h2>
-   <p>No fixed width, width of an element should be defined by parent. No fixed height, height of the element should be defined by content.</p>
+  <h2>Avoid fixed sizes</h2>
+  <strong>Do not specify fixed widths for elements</strong>
+  <p>If you are creating so called "fixed width layout" with 960px width, there should be only one place where <code>width: 960px</code> is specified. All other objects and structures that are placed into this layout should stretch to 100% of parrent width. Because only in this case you can reuse objects placing them in different parts of layout and they will fit dedicated space.</p>
+  <p>If you don't need element visually to stretch to 100% of a parent's width - wrap it with grid. If grid sizes are not enough - create custom wrapper blocks with prorotions you need (17%, 44%, etc.) and let element stretch to width of wrapper. But do not specify fixed width in pixels.</p>
+  
+   <strong>Do not specify fixed height for elements</strong>
+   <p>No fixed height, height of the element should be defined by content.</p>
 
-   <h2></h2>
+   <h2>Location dependent styles</h2>
    <p></p>
 </div> <!-- /mainbar -->
