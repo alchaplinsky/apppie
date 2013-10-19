@@ -1,8 +1,12 @@
 {
   "name": "ApplePie",
+  "version": "0.1.0",
   "description": "",
   "keywords": ["apple", "pie", "html5", "css3"],
-  "version": "0.1.0",
+  "repository": {
+    "type" : "git",
+    "url" : "git@github.com:alchapone/applepie.git"
+  },
   "bugs": {
     "url" : "https://github.com/alchapone/applepie/issues",
     "email" : "alchapone@yandex.ru"
@@ -17,12 +21,20 @@
     "email": "leopard_ne@inbox.ru",
     "url": "http://leopard.in.ua/"
   },
-  "devDependencies": {
-  },
   "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/alchapone/applepie/blob/master/LICENSE"
     }
-  ]
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
 }
