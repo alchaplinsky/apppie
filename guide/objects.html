@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <title>ApplePie CSS</title>
   <link rel="icon" type="image/png" href="/images/favicon-d0e6b95e.png" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/all-16cb3449.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/all-13a08af4.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/icons-cb78e794.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/highlight-77bbac06.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight-8449288b.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script>
@@ -23,8 +23,8 @@
           <h2 class="left pts">ApplePie CSS</h2>
         </a>
         <ul class="navigation">
-          <li><a href="/">Getting started</a></li>
-          <li><a href="/guide/code_style.html">Style Guide</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guide/getting_started.html">Style Guide</a></li>
           <li><a href="/framework/reset.html">Framework</a></li>
           <li><a href="/components">Components</a></li>
         </ul>
@@ -32,18 +32,36 @@
       <div class="content">
           <div class="sidenav">
   <ul class="guide-nav">
-    <li><a href="/guide/code_style.html">Coding Style</a></li>
-    <li><a href="/guide/naming_conventions.html">Naming conventions</a></li>
-    <li><a href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
-    <!-- <li><a href="/guide/simplicity_and_modularity.html">Simplicity and Modularity</a></li> -->
-    <li><a href="/guide/objects.html">Objects</a></li>
-    <li><a href="/guide/modules.html">Modules</a></li>
-    <!-- <li><a href="/guide/structure_and_appearance.html">Separate Structure and Appearance</a></li> -->
-    <li><a href="/guide/using_sass.html">Using SASS</a></li>
-    <li><a href="/guide/file_organization.html">File Organization</a></li>
+    <li>
+      <a href="#" class="item">Introduction</a>
+      <ul>
+        <li><a class="subitem" href="/guide/getting_started.html">Getting Started</a></li>
+        <!-- <li><a class="subitem" href="/guide/oocss.html">OOCSS</a></li> -->
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="item">Approach</a>
+      <ul>
+        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
+        <li><a class="subitem" href="/guide/naming_conventions.html">Naming conventions</a></li>
+        <li><a class="subitem" href="/guide/objects.html">Objects</a></li>
+        <li><a class="subitem" href="/guide/modules.html">Modules</a></li> 
+        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="item">Organization</a>
+      <ul>
+        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
+        <li><a class="subitem" href="/guide/using_sass.html">Using SASS</a></li>
+        <li><a class="subitem" href="/guide/file_organization.html">File Organization</a></li>
+        <!-- <li><a class="subitem" href="">Responsive desing</a></li> -->
+      </ul>
+    </li>
   </ul>
 </div><div class="mainbar">
   <h1>Objects</h1>
+  <h2>Learning to think in Objects</h2>
   <p>Object Oriented CSS is all about learning to think about your UI and CSS in terms of objects. Object is a simple independent and indivisible component that is used across the project. Objects are small little chunks of functionality. You can think of them as interface elements like headings, form fields, buttons, and content areas. </p>
   <p>Object names should be semantic simple and descriptive.</p>
   <p>Object's independence means that no external styles or styles of other objects shoul influence to object's look or behaviour. It should look the same if it is placed on empty page as a single element either if it is placed in context within complex layout with multiple other objects.</p>
@@ -55,12 +73,26 @@
 &lt;/ul&gt;</code></pre>
   <p>It's not likely that we would need to divide this object to elements, because we won't use list item <code>li</code> without actual list element <code>ul</code>. But we can take out a link element. But link should have it's default styles already defined in typography.</p>
 
+
   <h2>Object modification</h2>
-  <p></p>
-  <li>Object modifier</li>
-  <li>Minimum classes</li>
-  <li>Object groups</li>
-  
+  <p>There are lots of cases when you have similar objects that differ in minor things like background color or text color or something like this. Apparently there's no need to make up a separate name for this objects and apply same styling for both. Object modification concept will help to solve this. According to this concept, first class, added to an element sets it's default look and behaviour, and second class modifies some of default styling</p>
+  <p>The simplest example: we have <code>.button</code> element which may have different backgrounds ñcolor and text color as well.</p>
+  <pre><code>.button {
+  background: linear-gradient(#eee, #ddd);
+  border: 1px solid #999;
+  color: #666;
+  padding: 4px 10px;
+  cursor: pointer;
+}</code></pre>
+  <p>Next comes object modifier class, which adds new styles or overrides needed styles of 'default' button.</p>
+  <pre><code>.button.primary {
+  background: #428bca;
+  border-color: #357ebd;
+  color: #fff;
+}</code></pre>
+  <p>Object's shouldn't have lots of modifier classes. There should be 2 modifiers maximum on a single object. For instance first for changing object type, and second for setting state. Be minimalistic as possible with amount of classes on a single element.</p>
+  <pre><code>&lt;a href="#" class="button primary disabled"&gt;Button&lt;/a&gt;</code></pre>
+  <h2>Parent-Child relationships</h2>
 </div>
       </div>
     </div>

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ApplePie CSS</title>
+  <link rel="icon" type="image/png" href="/images/favicon-d0e6b95e.png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/all-13a08af4.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/icons-cb78e794.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight-8449288b.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <a href="/">
+          <img class="left" src="/images/logo-1351bbd8.png" />
+          <h2 class="left pts">ApplePie CSS</h2>
+        </a>
+        <ul class="navigation">
+          <li><a href="/">Home</a></li>
+          <li><a href="/guide/getting_started.html">Style Guide</a></li>
+          <li><a href="/framework/reset.html">Framework</a></li>
+          <li><a href="/components">Components</a></li>
+        </ul>
+      </div>
+      <div class="content">
+          <div class="sidenav">
+  <ul class="guide-nav">
+    <li>
+      <a href="#" class="item">Introduction</a>
+      <ul>
+        <li><a class="subitem" href="/guide/getting_started.html">Getting Started</a></li>
+        <!-- <li><a class="subitem" href="/guide/oocss.html">OOCSS</a></li> -->
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="item">Approach</a>
+      <ul>
+        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
+        <li><a class="subitem" href="/guide/naming_conventions.html">Naming conventions</a></li>
+        <li><a class="subitem" href="/guide/objects.html">Objects</a></li>
+        <li><a class="subitem" href="/guide/modules.html">Modules</a></li> 
+        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="item">Organization</a>
+      <ul>
+        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
+        <li><a class="subitem" href="/guide/using_sass.html">Using SASS</a></li>
+        <li><a class="subitem" href="/guide/file_organization.html">File Organization</a></li>
+        <!-- <li><a class="subitem" href="">Responsive desing</a></li> -->
+      </ul>
+    </li>
+  </ul>
+</div><div class="mainbar">
+  <h1>Simplicity</h1>
+  <h2>Keep it as simple as possible simple</h2>
+  <p>This may sound obvious but if you find yourself using complicated coding to achieve your design then you should think again about whether the feature you need is really necessary or if you’re just thinking about your design and not your visitors. Complex code is usually the result of muddled thinking. Plan your structure logically and work from the outside in and from the top down where possible.</p>
+  
+  <strong>Keep containers to a minimum. Avoid deep nesting</strong>
+  <p>UI elements should be designed to include the minimum footprint of an element. Try to avoid lots of nested elements or wrapper elements that are needed only for styling. If extra styling is needed, consider using pseudo selectors <code>:after</code> and <code>:before</code>.</p>
+  
+  <strong>Keep selectors to a minimum</strong>
+  <p>Just specify the minimum number of selectors necessary for the style. If you find yourself doing <code>.header ul.navigation li {...}</code> or <code>table tr td {...}</code> then you're being more verbose than you need. Using less selectors will mean less selectors will be needed to override any particular style — that means it’s easier to troubleshoot.</p>
+  
+  <strong>Keep properties to a minimum</strong>
+  <p>Work smarter, not harder with CSS. Under this rule, there are a number of subrules: if there isn’t a point to adding a CSS property, don’t add it; if you’re not sure why you’re adding a CSS property, don’t add; and if you feel like you’ve added the same property in lots of places, figure out how to add it in only one place.</p>
+  
+  <strong>Keep CSS hacks to a minimum</strong>
+  <p>Don’t use hacks unless its a known and documented bug. If you find that you are looking for a hack to fix a certain issue in your design then first do some research (Google is your friend here) and try to identify the issue you are having problems with.</p>
+
+  <h2>Avoid fixed sizes</h2>
+  <strong>Do not specify fixed widths for elements</strong>
+  <p>If you are creating so called "fixed width layout" with 960px width, there should be only one place where <code>width: 960px</code> is specified. All other objects and structures that are placed into this layout should stretch to 100% of parrent width. Because only in this case you can reuse objects placing them in different parts of layout and they will fit dedicated space.</p>
+  <p>If you don't need element visually to stretch to 100% of a parent's width - wrap it with grid. If grid sizes are not enough - create custom wrapper blocks with prorotions you need (17%, 44%, etc.) and let element stretch to width of wrapper. But do not specify fixed width in pixels.</p>
+  
+   <strong>Do not specify fixed height for elements</strong>
+   <p>All structures and containers should be flexible and stretchable, because you never know how large dynamic content will be placed inside. If you specify fixed height for a block and insert a large ammount of text inside, text will overflow container and it will look like UI bug. It is better idea to let container stretch verticaly after the content. So content defines height of parent container.</p>
+   <p>If you need to have exact height of an element for instance <code>.header</code> and you are sure that it will contain only a single line of text, use a combination of <code>line-height</code> and <code>padding</code> to set right height.</p>
+   <p>For example your header should have height of 40px, you can do next thing:</p>
+   <pre><code>.navigation {
+  line-height: 16px;
+  padding: 12px 0;   
+}</code></pre>
+
+</div> <!-- /mainbar -->
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div>Designed and built at <a href="http://railsware.com" class="railsware">Railsware</a><br /> Code licensed under MIT License</div>
+      </div>
+    </div>
+  </body>
+</html>

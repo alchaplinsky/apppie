@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <title>ApplePie CSS</title>
   <link rel="icon" type="image/png" href="/images/favicon-d0e6b95e.png" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/all-16cb3449.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/all-13a08af4.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/icons-cb78e794.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/highlight-77bbac06.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight-8449288b.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script>
@@ -23,23 +23,38 @@
           <h2 class="left pts">ApplePie CSS</h2>
         </a>
         <ul class="navigation">
-          <li><a href="/">Getting started</a></li>
-          <li><a href="/guide/code_style.html">Style Guide</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guide/getting_started.html">Style Guide</a></li>
           <li><a href="/framework/reset.html">Framework</a></li>
           <li><a href="/components">Components</a></li>
         </ul>
       </div>
       <div class="content">
           <div class="sidenav">
-  <ul class="docs-nav">
-    <li><a href="/framework/reset.html">Reset/Normalize</a></li>
-    <li><a href="/framework/grids.html">Grid</a></li>
-    <li><a href="/framework/spaces.html">Spacings/Helper classes</a></li>
-    <li><a href="/framework/typography.html">Typography</a></li>
-    <li><a href="/framework/mixins.html">Mixins</a></li>
-    <li><a href="/framework/library.html">Library</a></li>
-    </ul>
-  </div><div class="mainbar">
+  <ul>
+    <li>
+      <a href="#" class="item">Base</a>
+      <ul>
+        <li><a class="subitem" href="/framework/reset.html">Reset/Normalize</a></li>
+        <li><a class="subitem" href="/framework/grid_system.html">Grid System</a></li>
+        <li><a class="subitem" href="/framework/spaces.html">Spacings/Helper classes</a></li>
+        <li><a class="subitem" href="/framework/mixins.html">Mixins</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="item">Typography</a>
+      <ul>
+        <a class="subitem" href="/framework/typography.html">Typography</a>
+      </ul>
+    </li>
+    <li class="item">
+      <a href="" class="item">Library</a>
+      <ul>
+        <li><a class="subitem" href="/framework/library.html">Library</a></li>
+      </ul>
+    </li>
+  </ul>
+</div><div class="mainbar">
     <h1>Reset.css</h1>
     <p>The goal of a reset stylesheet is to reduce browser inconsistencies in things like default line heights, margins and font sizes of headings, and so on. CSS reset is the first stylesheet that should be presented to browser, so it makes browser to play by our rules.</p>
     <p>There are multiple variations of reset.css and normalize.css al over the web, icluding most popular Minimalistic Reset (setting margins and paddings of all elements to 0), Eric Mayer's reset and Yahoo reset. But most of them are just a starting point, and they should be extended, edited, tweaked to match your specific reset baseline. Reset presented below is a mix of different reset techniques that solve different issues and inconsistencies in browsers behaviour, and it's complete enough to include it to a project and extending step.</p>
