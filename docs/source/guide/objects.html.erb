@@ -33,4 +33,12 @@
   <p>Object's shouldn't have lots of modifier classes. There should be 2 modifiers maximum on a single object. For instance first for changing object type, and second for setting state. Be minimalistic as possible with amount of classes on a single element.</p>
   <pre><code>&lt;a href="#" class="button primary disabled"&gt;Button&lt;/a&gt;</code></pre>
   <h2>Parent-Child relationships</h2>
+  <p>One more way to change object’s appearance or behaviour is to use parent’s class name in selector to add changes to the object. Location dependent styles are usually the kind of things you should avoid, because in general object’s styles should not depend on placement. But in rare cases you may come up with an idea of modifying object due to it’s location. For example let’s make the submit button larger than the default one.</p>
+  <pre><code>.signup-form .button {
+  padding: 8px 20px;
+  }</code></pre>
+  <p>In this case the button will remain an independent object you can place anywhere on the page, and only if placed inside signup form it will change its appearance.</p>
+  <pre><code>&lt;form class="signup-form"&gt;
+  &lt;button class="button"&gt;Button text&lt;/button&gt;
+&lt;/form&gt;</code></pre>
 </div>

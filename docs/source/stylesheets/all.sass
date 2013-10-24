@@ -1,5 +1,6 @@
 @import "base.css"
 @import "buttons.css"
+@import "icons"
 
 html, body 
   height: 100%
@@ -27,6 +28,7 @@ body
   top: 0
   text-shadow: none
   padding: 0 40px
+  z-index: 11
 
 .navigation 
   list-style: none
@@ -147,7 +149,16 @@ p, ul, h1
 ul 
   margin-left: 18px
 
-
+dl
+  //margin-left: 1em
+  dt
+    font-weight: bold
+    //margin-bottom: .3rem
+  dd
+    margin-left: 1em
+    margin-bottom: .6rem
+    font-size: .9em
+    
 em 
   font-size: 13px
   font-weight: bold
@@ -160,7 +171,31 @@ code
   background: #f6f5f1
   border: 1px solid #ededeb
   padding: 1px 5px
-
+  position: relative
+  &:after
+    font-family: 'fontawesome'
+    speak: none
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1
+    -webkit-font-smoothing: antialiased
+    position: absolute
+    top: 10px
+    right: 10px
+    font-size: 1.6em
+    opacity: .5
+  &.proper
+    &:after
+      content: '\f046'
+      color: #08a000
+  &.wrong
+    background-color: #ffd5d5
+    border-color: #ff9c9c
+    &:after
+      content: '\f071'
+      color: #c00
 
 pre 
   background: #fff
