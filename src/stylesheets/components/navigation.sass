@@ -1,2 +1,28 @@
+/*=================================*/
+/*  Navigation structure
+/*=================================*/
 %navigation
-  background: #333333
+  list-style: none
+  &:after
+    content: "."
+    display: block
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+  li
+    float: left
+    a
+      display: block
+      padding: 8px 20px
+      text-decoration: none
+        
+/*=================================*/
+/*  Navigation Skin
+/*=================================*/
+=navigation($background: #fafafa, $color: #333)
+  li a
+    color: $color
+    background: $background
+    &:hover
+      background: lighten($background, 5%)
