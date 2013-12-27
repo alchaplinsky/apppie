@@ -1,7 +1,7 @@
 $gutter-space: 0!default
 $bottom-space: 20px!default
 
-.row, .row-adaptive
+.row
   *zoom: 1
   &:after
     content: '.'
@@ -73,7 +73,7 @@ $bottom-space: 20px!default
   width: 83.33333%
 
 @media (max-width: 768px)
-  .row-adaptive
+  .row.responsive
     .col1of2, 
     .col1of3, .col2of3, 
     .col1of4, .col2of4, .col3of4,

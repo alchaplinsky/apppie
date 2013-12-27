@@ -6,7 +6,7 @@
 /*  Last change: 24/10/2013
 /*  Primary use: Library 
 /*-------------------------------------------------------------------*/
-
+@import "mixins/all"
 @import "components/all"
 
 /*------------------------------------------------------------------
@@ -14,8 +14,39 @@
 /*------------------------------------------------------------------
 .navigation
   @extend %navigation
-  +navigation(#222, #fff)
+  +navigation(#fff, #777)
 
 /*------------------------------------------------------------------
 /*  [ Buttons ]
 /*------------------------------------------------------------------
+.button
+  +button(#60AAE9, #FFF)
+  &.success
+    +button-skin(#AECE4E, #FFF)
+  &.danger
+    +button-skin(#E77755, #FFF)
+  &.warning
+    +button-skin(#F4C84F, #FFF)
+  &.disabled
+    +button-skin(#AAA, #FFF)
+    
+/*------------------------------------------------------------------
+/*  [ Form fields ]
+/*------------------------------------------------------------------
+input[type='search']
+  -webkit-appearance: textfield
+  -webkit-box-sizing: content-box
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration
+    display: none
+
+input[type='text'], input[type='password'], input[type='email'], input[type='search'], textarea
+  +field
+
+/*------------------------------------------------------------------
+/*  [ Tables ]
+/*------------------------------------------------------------------  
+table
+  +table

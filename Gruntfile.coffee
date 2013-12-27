@@ -1,5 +1,9 @@
 "use strict"
 module.exports = (grunt) ->
+
+  # Actually load this plugin's task(s).  
+  require('load-grunt-tasks')(grunt)
+
   # Project configuration.
   grunt.initConfig
     # pkg
@@ -75,22 +79,6 @@ module.exports = (grunt) ->
       css:
         files: '**/*.sass'
         tasks: ['sass']
-
-
-  # Actually load this plugin's task(s).
-  #grunt.loadTasks "tasks"
-
-  # These plugins provide necessary tasks.
-  grunt.loadNpmTasks "grunt-contrib-jshint"
-  grunt.loadNpmTasks "grunt-contrib-uglify"
-  grunt.loadNpmTasks "grunt-contrib-concat"
-  grunt.loadNpmTasks "grunt-contrib-coffee"
-  grunt.loadNpmTasks "grunt-contrib-sass"
-  grunt.loadNpmTasks "grunt-contrib-clean"
-  grunt.loadNpmTasks "grunt-contrib-cssmin"
-  grunt.loadNpmTasks "grunt-contrib-copy"
-  grunt.loadNpmTasks "grunt-contrib-watch"
-  grunt.loadNpmTasks "grunt-contrib-compress"
 
   # Whenever the "test" task is run, first clean the "tmp" dir, then run this
   # plugin's task(s), then test the result.
