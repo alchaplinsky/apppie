@@ -5,8 +5,8 @@
   <title>ApplePie</title>
   <link rel="icon" type="image/png" href="/images/favicon-d0e6b95e.png" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/all-13a08af4.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/icons-cb78e794.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/all-3a530931.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/icons-b6e639f0.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/highlight-8449288b.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -24,37 +24,38 @@
         </a>
         <ul class="navigation">
           <li><a href="/">Home</a></li>
-          <li><a href="/guide/getting_started.html">Style Guide</a></li>
+          <li><a href="/guide/introduction.html">Style Guide</a></li>
           <li><a href="/framework/reset.html">Framework</a></li>
-          <li><a href="/components">Components</a></li>
+          <li><a href="https://github.com/alchapone/applepie">Github</a></li>
         </ul>
       </div>
       <div class="content">
           <div class="sidenav">
   <ul class="guide-nav">
     <li>
-      <a href="#" class="item">Introduction</a>
+      <span class="item">Getting Started</span>
       <ul>
-        <li><a class="subitem" href="/guide/getting_started.html">Getting Started</a></li>
+        <li><a class="subitem" href="/guide/introduction.html">Introduction</a></li>
+        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
         <!-- <li><a class="subitem" href="/guide/oocss.html">OOCSS</a></li> -->
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Approach</a>
+      <span class="item">Approach</span>
       <ul>
-        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
+        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
         <li><a class="subitem" href="/guide/naming_conventions.html">Naming conventions</a></li>
+        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/objects.html">Objects</a></li>
         <li><a class="subitem" href="/guide/modules.html">Modules</a></li> 
-        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Organization</a>
+      <span class="item">Organization</span>
       <ul>
-        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/using_sass.html">Using SASS</a></li>
         <li><a class="subitem" href="/guide/file_organization.html">File Organization</a></li>
+        <li><a class="subitem" href="/guide/ui_library.html">UI Library</a></li>
         <!-- <li><a class="subitem" href="">Responsive desing</a></li> -->
       </ul>
     </li>
@@ -62,25 +63,25 @@
 </div>
 <div class="mainbar">
   <h1>Categorizing CSS Rules</h1>
-  <p>Every project needs some organization. Throwing every new style you create onto the end of a single file would make finding things more difficult and would be very confusing for anybody else working on the project. It is important to have a standard high-level structure in place. proposed structure</p>
+  <p>Every project needs some organization. Throwing every new style you create onto the end of a single file would make finding things more difficult and would be very confusing for anybody else working on the project. It is important to have a standard high-level structure in place.</p>
 
-  <p>There are four types of categories:</p>
+  <p>In our case categories would be:</p>
   <ul>
-    <li>Reset</li>
-    <li>Toolkit Styles (grids, helpers, etc.)</li>
-    <li>Typography</li>
+    <li>Base rules</li>
     <li>Layout</li>
-    <li>Objects</li>
-    <li>Modules</li>
+    <li>Typography</li>
+    <li><a href="objects.html">Objects</a></li>
+    <li><a href="modules.html">Modules</a></li>
     <li>Sections</li>
   </ul>
-  <p>Base rules are the defaults. Reset.css, grids, spaces and util classes, that stays the same across all the projects.</p>
+  <p>Base rules are the defaults. They are foundation which is used in every product. Most likely they will stay unchanged while being moved from one product to another.</p>
+  
+  <p>Base rules include reset syles, grids, spaces and utilities(helpers) classes.</p>
 
   <p>Layout rules divide the page into sections. Layouts hold one or more modules together.</p>
 
   <p>Typography rules define basic text styling. All types of headers that are used in project, text and link styles, fonts and colors are defined here.</p>
 
-  <p>Modules are the reusable, modular parts of our design. They are the ui elements, buttons, inputs, lists, blocks and more complex modules.</p>
 </div>
       </div>
     </div>

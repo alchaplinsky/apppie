@@ -5,8 +5,8 @@
   <title>ApplePie</title>
   <link rel="icon" type="image/png" href="/images/favicon-d0e6b95e.png" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/all-13a08af4.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/icons-cb78e794.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/all-3a530931.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/icons-b6e639f0.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/highlight-8449288b.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -24,47 +24,135 @@
         </a>
         <ul class="navigation">
           <li><a href="/">Home</a></li>
-          <li><a href="/guide/getting_started.html">Style Guide</a></li>
+          <li><a href="/guide/introduction.html">Style Guide</a></li>
           <li><a href="/framework/reset.html">Framework</a></li>
-          <li><a href="/components">Components</a></li>
+          <li><a href="https://github.com/alchapone/applepie">Github</a></li>
         </ul>
       </div>
       <div class="content">
           <div class="sidenav">
   <ul class="guide-nav">
     <li>
-      <a href="#" class="item">Introduction</a>
+      <span class="item">Getting Started</span>
       <ul>
-        <li><a class="subitem" href="/guide/getting_started.html">Getting Started</a></li>
+        <li><a class="subitem" href="/guide/introduction.html">Introduction</a></li>
+        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
         <!-- <li><a class="subitem" href="/guide/oocss.html">OOCSS</a></li> -->
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Approach</a>
+      <span class="item">Approach</span>
       <ul>
-        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
+        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
         <li><a class="subitem" href="/guide/naming_conventions.html">Naming conventions</a></li>
+        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/objects.html">Objects</a></li>
         <li><a class="subitem" href="/guide/modules.html">Modules</a></li> 
-        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Organization</a>
+      <span class="item">Organization</span>
       <ul>
-        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/using_sass.html">Using SASS</a></li>
         <li><a class="subitem" href="/guide/file_organization.html">File Organization</a></li>
+        <li><a class="subitem" href="/guide/ui_library.html">UI Library</a></li>
         <!-- <li><a class="subitem" href="">Responsive desing</a></li> -->
       </ul>
     </li>
   </ul>
 </div><div class="mainbar">
   <h1>Modules</h1>
-  <p>Module is a unique complex component that consists of an objects. </p>
-  <li>Module definition</li>
-  <li>Module modifier</li>
-  <li>Minimal selector nesting inside module</li>
+  <h2>Defining a module</h2>
+  <p>
+    Module is a unique composite component that consists of <a href="objects.html">objects</a>. In other words, its an object made from objects.<br />
+    Easy to think of modules from the atomic physics analogy. Thus, objects would be atoms and modules, obviously, should be molecules.
+  </p>
+  <h2>Modules necessity</h2>
+  <p>
+    Module usage could seem non-evident and doubtful considering that separation objects and modules appears to be complicated and not-so-obvious.<br />
+    But its much easier to maintain and support objects which are united by some principles into something bigger.
+  </p>
+  <p>Lets say we have simple form:</p>
+  <img src="https://api.monosnap.com/image/download?id=2Q3yytfTGtkonFgdMopzuKxFQ" alt="Simple form" />
+  <pre><code>&lt;form accept-charset="UTF-8" action="/contact" class="form" id="contactForm" method="post"&gt;
+  &lt;input id="name" name="name" placeholder="Your Name*" type="text" /&gt;
+  &lt;textarea id="message" name="message" placeholder="Message*"&gt;&lt;/textarea&gt;
+  &lt;input class="form-button" name="commit" type="submit" value="Send your message" /&gt;
+&lt;/form&gt;</code></pre>
+  <p>Evidently, each of three elements is an object:</p>
+  <pre><code>&lt;input id="name" name="name" placeholder="Your Name*" type="text" /&gt;</code></pre>
+  <pre><code>&lt;textarea id="message" name="message" placeholder="Message*"&gt;&lt;/textarea&gt;</code></pre>
+  <pre><code>&lt;input class="form-button" name="commit" type="submit" value="Send your message" /&gt;</code></pre>
+  <p>
+    But in the same time you realize that contact form lays its claim to be a kind of object itself: its consistent, simple and independent, can be reused without any modifications. So its pretty logical to have it like an object for easy maintenance and re-use. Only difference is that its divisible.<br />
+    That would be the main distinction between modules and objects.
+  </p>
+  <h2>Modules modifiers</h2>
+  <p>Modifying of modules follows the same logic as objects. If you have a need to have modified module, do it with modificator class name.</p>
+  <p>Imagine we have a variation of the form we already got familiar with:</p>
+  <img src="http://take.ms/1Cv7Ce" alt="Modified form" />
+  <p>Its easy to see that structure is completely the same, only difference is appearance. So we add modificator class...</p>
+  <pre><code>&lt;form accept-charset="UTF-8" action="/contact" class="form muted" id="contactForm" method="post"&gt;</code></pre>
+  <p>...and corresponding style rules which will add appearance guides or override default ones:</p>
+  <pre><code id="above">.form.muted {
+  background-color: #fff;
+}
+
+.form.muted input[type=text] {
+  background-color: #ebebeb;
+}
+
+.form.muted input[type=submit] {
+  background-color: #262626;
+}</code></pre>
+  <p>Please note that there is a delicate aspect here.</p>
+  <p>It may be hard to outline a target for modification when working with modules. If you see that requested change is definitely related to a whole module, than module is what should be extended with modification. But its easy to mistake and miss that its objects what should be modified instead of a whole module.</p>
+  <p>Back to example, we have two variations of inputs: grey-backgrounded and white-backgrounded. </p>
+  <p>So most likely there are two possible scenarios:</p>
+  <p>1. Only place where different (white-backgrounded) inputs are present is a contact form which has two variations within the app.<br />
+    These are the circumstances for module modification, exactly like described <a href="#above">above</a>.
+  </p>
+    2. Or, on the contrary, they can be found throughout the whole app within many different forms and occasions.<br />
+    This is the case for modify object(s) itself, not a whole module (form). CSS code follows below.
+  </p>
+  <pre><code>input[type=text].muted {
+  background-color: #ebebeb;
+}</code></pre>
+
+  <pre><code>input[type=submit].muted {
+  background-color: #262626;
+}</code></pre>
+  <h2>Module selectors nesting</h2>
+  <p>
+    Coding modules should not make you write much more complicated code that simple objects do. This means that depth of selectors nesting should not reach more that ~3-4 levels deep.<br />
+    Getting deeper that that may imply one or multiple of following:</p>
+  <dl>
+    <dt>You are overcomplicating module and should consider to break module into few smaller ones.</dt>
+    <dd>Its common case when module continue to grow iteratively and its hard to pick the moment when it grows out from the cradle. But keep an eye on it. Unwatched module can become a trouble-making mostrosity.</dd>
+    <dt>You are trying to modify module when the way is to create new variations of existing objects and gather module from new objects</dt>
+    <dd>Case we described in forms example above. What should I modify: module or objects? Module stylesheet size and complexity can be a hint here.</dd>
+    <dt>Module has too much of wrappers which are not important structure-wise and should not be included in selector chain</dt>
+    <dd>
+      <p>Case where you put some wrappers and they migrated to css selectors making them inexplicably long. Note that css rules can (and should) include only structural dependencies.<br />
+      I.e., you have section with inner div and object inside it:
+      </p>
+      <pre><code>&lt;div class="section"&gt;
+  &lt;div class="section-wrapper"&gt;
+    &lt;input id="name" name="name" placeholder="Your Name*" type="text" /&gt;
+    &lt;input class="form-button" name="commit" type="submit" value="Send your message" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      <p>And rules for button should be declared like this:</p>
+      <pre><code class="proper">.section input[type=submit] {
+  ...
+}</code></pre>
+      <p>Instead of:</p>
+      <pre><code class="wrong">.section .section-wrapper input[type=submit] {
+  ...
+}</code></pre>
+      <p>Moreover, you can consider to remove non-structural wrappers and move their appearance to <code>:before</code> or <code>:after</code> pseudoclasses. <a href="simplicity.html">This approach</a> will make your structure clearer and should eliminate the problem with selectors chain described above.</p>
+    </dd>
+  </ul>
 </div>
       </div>
     </div>

@@ -5,8 +5,8 @@
   <title>ApplePie</title>
   <link rel="icon" type="image/png" href="/images/favicon-d0e6b95e.png" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/all-13a08af4.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/icons-cb78e794.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/all-3a530931.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/icons-b6e639f0.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/highlight-8449288b.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -24,37 +24,38 @@
         </a>
         <ul class="navigation">
           <li><a href="/">Home</a></li>
-          <li><a href="/guide/getting_started.html">Style Guide</a></li>
+          <li><a href="/guide/introduction.html">Style Guide</a></li>
           <li><a href="/framework/reset.html">Framework</a></li>
-          <li><a href="/components">Components</a></li>
+          <li><a href="https://github.com/alchapone/applepie">Github</a></li>
         </ul>
       </div>
       <div class="content">
           <div class="sidenav">
   <ul class="guide-nav">
     <li>
-      <a href="#" class="item">Introduction</a>
+      <span class="item">Getting Started</span>
       <ul>
-        <li><a class="subitem" href="/guide/getting_started.html">Getting Started</a></li>
+        <li><a class="subitem" href="/guide/introduction.html">Introduction</a></li>
+        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
         <!-- <li><a class="subitem" href="/guide/oocss.html">OOCSS</a></li> -->
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Approach</a>
+      <span class="item">Approach</span>
       <ul>
-        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
+        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
         <li><a class="subitem" href="/guide/naming_conventions.html">Naming conventions</a></li>
+        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/objects.html">Objects</a></li>
         <li><a class="subitem" href="/guide/modules.html">Modules</a></li> 
-        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Organization</a>
+      <span class="item">Organization</span>
       <ul>
-        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/using_sass.html">Using SASS</a></li>
         <li><a class="subitem" href="/guide/file_organization.html">File Organization</a></li>
+        <li><a class="subitem" href="/guide/ui_library.html">UI Library</a></li>
         <!-- <li><a class="subitem" href="">Responsive desing</a></li> -->
       </ul>
     </li>
@@ -93,6 +94,14 @@
   <p>Object's shouldn't have lots of modifier classes. There should be 2 modifiers maximum on a single object. For instance first for changing object type, and second for setting state. Be minimalistic as possible with amount of classes on a single element.</p>
   <pre><code>&lt;a href="#" class="button primary disabled"&gt;Button&lt;/a&gt;</code></pre>
   <h2>Parent-Child relationships</h2>
+  <p>One more way to change object’s appearance or behaviour is to use parent’s class name in selector to add changes to the object. Location dependent styles are usually the kind of things you should avoid, because in general object’s styles should not depend on placement. But in rare cases you may come up with an idea of modifying object due to it’s location. For example let’s make the submit button larger than the default one.</p>
+  <pre><code>.signup-form .button {
+  padding: 8px 20px;
+  }</code></pre>
+  <p>In this case the button will remain an independent object you can place anywhere on the page, and only if placed inside signup form it will change its appearance.</p>
+  <pre><code>&lt;form class="signup-form"&gt;
+  &lt;button class="button"&gt;Button text&lt;/button&gt;
+&lt;/form&gt;</code></pre>
 </div>
       </div>
     </div>

@@ -5,8 +5,8 @@
   <title>ApplePie</title>
   <link rel="icon" type="image/png" href="/images/favicon-d0e6b95e.png" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/all-13a08af4.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/icons-cb78e794.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/all-3a530931.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/icons-b6e639f0.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/highlight-8449288b.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -24,38 +24,41 @@
         </a>
         <ul class="navigation">
           <li><a href="/">Home</a></li>
-          <li><a href="/guide/getting_started.html">Style Guide</a></li>
+          <li><a href="/guide/introduction.html">Style Guide</a></li>
           <li><a href="/framework/reset.html">Framework</a></li>
-          <li><a href="/components">Components</a></li>
+          <li><a href="https://github.com/alchapone/applepie">Github</a></li>
         </ul>
       </div>
       <div class="content">
           <div class="sidenav">
   <ul>
     <li>
-      <a href="#" class="item">Base</a>
+      <span class="item">Base</span>
       <ul>
-        <li><a class="subitem" href="/framework/reset.html">Reset/Normalize</a></li>
+        <li><a class="subitem" href="/framework/reset.html">Reset.css</a></li>
         <li><a class="subitem" href="/framework/grid_system.html">Grid System</a></li>
-        <li><a class="subitem" href="/framework/spaces.html">Spacings/Helper classes</a></li>
+        <li><a class="subitem" href="/framework/spaces.html">Spacings</a></li>
+        <li><a class="subitem" href="/framework/helpers.html">Helper classes</a></li>
         <li><a class="subitem" href="/framework/mixins.html">Mixins</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#" class="item">Typography</a>
+    <li class="item">
+      <span class="item">Components</span>
       <ul>
         <a class="subitem" href="/framework/typography.html">Typography</a>
-      </ul>
-    </li>
-    <li class="item">
-      <a href="" class="item">Library</a>
-      <ul>
-        <li><a class="subitem" href="/framework/library.html">Library</a></li>
+        <li><a class="subitem" href="">Navigation</a></li>
+        <li><a class="subitem" href="">Buttons</a></li>
+        <li><a class="subitem" href="">Form elements</a></li>
+        <li><a class="subitem" href="">Tables</a></li>
+        <li><a class="subitem" href="">Lists</a></li>
+        <li><a class="subitem" href="">Alerts</a></li>
+        <li><a class="subitem" href="">Popups</a></li>
+        <li><a class="subitem" href="">Tooltips</a></li>
       </ul>
     </li>
   </ul>
 </div><div class="mainbar">
-    <h1>Spacings</h1>
+    <h1>Spacings and Helper classes</h1>
     <p><strong>Spacings</strong> - is pretty simple concept that can be used in absolutely every project. It allows you to get rid of multiple <code>margin</code> and <code>padding</code> rules in your css code.</strong></p>
     <p>If you find yorself writing <code>margin-bottom: 20px</code> for about dozen of times - you might need helper class for it. This means that you have pretty standard bottom spacing (margin) for UI objects, and that's good! That's consistency in design but, that is duplication in code. The same with inner paddings of different blocks and left or right spacings between buttons - all this should be consistent. And we can use helper classes for this, so we don't need to rewrite all this rules in CSS code for hundreds of times.</p>
     <p>Let's define 3 different space sizes, let's say <code>small: 5px</code>, <code>medium: 15px</code> and <code>large: 30px</code> and create helper classes for them. Naming is pretty simple and inpuitive: Each class name will consist of three letters, first one defines if it is <code>margin</code> or <code>padding</code>(<em>m</em> or <em>p</em>), second will specify direction <code>top</code>, <code>bottom</code>, <code>right</code> or <code>left</code> (<em>t</em>, <em>b</em>, <em>r</em>, <em>l</em>), and third one tells us which size to use <code>small</code>, <code>medium</code> or <code>large</code> (<em>s</em>, <em>m</em>, <em>l</em>). And also we can define additional direction letters for <code>horizontal</code> (both left and rigt), <code>vertical</code> (both top and bottom) and <code>all</code> directions (<em>h</em>, <em>v</em>, <em>a</em>).</p>

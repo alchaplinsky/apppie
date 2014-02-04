@@ -5,8 +5,8 @@
   <title>ApplePie</title>
   <link rel="icon" type="image/png" href="/images/favicon-d0e6b95e.png" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/all-13a08af4.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/icons-cb78e794.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/all-3a530931.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/icons-b6e639f0.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/highlight-8449288b.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -24,37 +24,38 @@
         </a>
         <ul class="navigation">
           <li><a href="/">Home</a></li>
-          <li><a href="/guide/getting_started.html">Style Guide</a></li>
+          <li><a href="/guide/introduction.html">Style Guide</a></li>
           <li><a href="/framework/reset.html">Framework</a></li>
-          <li><a href="/components">Components</a></li>
+          <li><a href="https://github.com/alchapone/applepie">Github</a></li>
         </ul>
       </div>
       <div class="content">
           <div class="sidenav">
   <ul class="guide-nav">
     <li>
-      <a href="#" class="item">Introduction</a>
+      <span class="item">Getting Started</span>
       <ul>
-        <li><a class="subitem" href="/guide/getting_started.html">Getting Started</a></li>
+        <li><a class="subitem" href="/guide/introduction.html">Introduction</a></li>
+        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
         <!-- <li><a class="subitem" href="/guide/oocss.html">OOCSS</a></li> -->
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Approach</a>
+      <span class="item">Approach</span>
       <ul>
-        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
+        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
         <li><a class="subitem" href="/guide/naming_conventions.html">Naming conventions</a></li>
+        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/objects.html">Objects</a></li>
         <li><a class="subitem" href="/guide/modules.html">Modules</a></li> 
-        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Organization</a>
+      <span class="item">Organization</span>
       <ul>
-        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/using_sass.html">Using SASS</a></li>
         <li><a class="subitem" href="/guide/file_organization.html">File Organization</a></li>
+        <li><a class="subitem" href="/guide/ui_library.html">UI Library</a></li>
         <!-- <li><a class="subitem" href="">Responsive desing</a></li> -->
       </ul>
     </li>
@@ -74,7 +75,7 @@
 }</code></pre>
   <p>Isn't it inappropriate?</p>
 
-  <h2>Do not use names that describe element positioning.</h2>
+  <h2>Do not use names that describe element positioning or appearance.</h2>
   <p>While working on project you may come up with class names like <code>.footer-block</code> or <code>.left-side</code>. But that's bad decision to use names that rely on location, because you never know when you have to place element or add similar element to another place on a page. It would be really strange to meet <code>.footer-block</code> somewhere outside footer. But that happens quite often because we are all willing to reuse existing and not writing new code.</p>
 
   <h2>Keep class names as simple as possible.</h2>

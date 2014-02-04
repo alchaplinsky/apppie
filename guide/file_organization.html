@@ -5,8 +5,8 @@
   <title>ApplePie</title>
   <link rel="icon" type="image/png" href="/images/favicon-d0e6b95e.png" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/all-13a08af4.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/icons-cb78e794.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/all-3a530931.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/icons-b6e639f0.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/highlight-8449288b.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -24,37 +24,38 @@
         </a>
         <ul class="navigation">
           <li><a href="/">Home</a></li>
-          <li><a href="/guide/getting_started.html">Style Guide</a></li>
+          <li><a href="/guide/introduction.html">Style Guide</a></li>
           <li><a href="/framework/reset.html">Framework</a></li>
-          <li><a href="/components">Components</a></li>
+          <li><a href="https://github.com/alchapone/applepie">Github</a></li>
         </ul>
       </div>
       <div class="content">
           <div class="sidenav">
   <ul class="guide-nav">
     <li>
-      <a href="#" class="item">Introduction</a>
+      <span class="item">Getting Started</span>
       <ul>
-        <li><a class="subitem" href="/guide/getting_started.html">Getting Started</a></li>
+        <li><a class="subitem" href="/guide/introduction.html">Introduction</a></li>
+        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
         <!-- <li><a class="subitem" href="/guide/oocss.html">OOCSS</a></li> -->
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Approach</a>
+      <span class="item">Approach</span>
       <ul>
-        <li><a class="subitem" href="/guide/code_style.html">Coding Style</a></li>
+        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
         <li><a class="subitem" href="/guide/naming_conventions.html">Naming conventions</a></li>
+        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/objects.html">Objects</a></li>
         <li><a class="subitem" href="/guide/modules.html">Modules</a></li> 
-        <li><a class="subitem" href="/guide/simplicity.html">Simplicity</a></li>
       </ul>
     </li>
     <li>
-      <a href="#" class="item">Organization</a>
+      <span class="item">Organization</span>
       <ul>
-        <li><a class="subitem" href="/guide/categorizing_css_rules.html">Categorizing CSS Rules</a></li>
         <li><a class="subitem" href="/guide/using_sass.html">Using SASS</a></li>
         <li><a class="subitem" href="/guide/file_organization.html">File Organization</a></li>
+        <li><a class="subitem" href="/guide/ui_library.html">UI Library</a></li>
         <!-- <li><a class="subitem" href="">Responsive desing</a></li> -->
       </ul>
     </li>
@@ -95,9 +96,7 @@
   <p><strong>application.css</strong> manifest file which defines what files should be included. Manifest is that it has the same name as rails layout file <code>app/views/layouts/application.html.erb</code>. It is likely you'll need to create more manifests for each rails layout you have in the app, because they might look different and have different styles.</p>
 
   <p><strong>application</strong> folder is named after sass manifest, and contains all the styles (except base, shared and responsive) that are used in application layout. It includes layout styles, modules, sections, typography etc.</p>
-
-  <p><strong>shared</strong> contains styles that need to be shared between different layouts. For instance you have 2 <code>layouts/application.html.erb</code> and <code>layouts/landing.html.erb</code>, so you should create <em>application</em> and <em>landing</em> folders under <em>stylesheets</em> directory as well as <code>application.sass</code> and <code>landing.sass</code> manifests. And if you use the same styles for markdown formatting in both of them, you should place them into <em>shared</em> folder.</p>
-
+  
   <p><strong>application/layout.sass</strong> Here we define layout structure and representation. </p>
 
   <p><strong>application/typography.sass</strong> Here is the file where custom fonts are included and all text styles are defined. Font family and fonts sizes for paragraphs and headings, link styles and behaviour etc.</p>
@@ -107,6 +106,8 @@
   <p><strong>application/sections</strong> Place for all structures, that aren't basicaly objects, but define some blocks or structures containing objects.</p>
 
   <p><strong>application/responsive</strong> Folder for all the responsive styles (media queries should go).</p>
+  <p><strong>shared</strong> contains styles that need to be shared between different layouts. For instance you have 2 <code>layouts/application.html.erb</code> and <code>layouts/landing.html.erb</code>, so you should create <em>application</em> and <em>landing</em> folders under <em>stylesheets</em> directory as well as <code>application.sass</code> and <code>landing.sass</code> manifests. And if you use the same styles for markdown formatting in both of them, you should place them into <em>shared</em> folder.</p>
+
 </div>
       </div>
     </div>
