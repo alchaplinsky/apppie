@@ -453,3 +453,31 @@ table {
     background: white; }
   table tr:nth-child(odd) {
     background: #fbfbfb; }
+
+/*------------------------------------------------------------------ */
+/*  [ Flash messages ] */
+/*------------------------------------------------------------------ */
+.flash {
+  padding: 20px;
+  color: #999999;
+  background: white;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #a5c8e5; }
+  .flash .title {
+    color: #a5c8e5; }
+  .flash .title {
+    text-transform: uppercase; }
+  .flash.success {
+    border: 1px solid #aece4e; }
+    .flash.success .title {
+      color: #aece4e; }
+  .flash.warning {
+    border: 1px solid #f3a641; }
+    .flash.warning .title {
+      color: #f3a641; }
+  .flash.danger {
+    border: 1px solid #e77755; }
+    .flash.danger .title {
+      color: #e77755; }

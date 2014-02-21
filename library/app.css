@@ -169,6 +169,10 @@ body, html {
     clear: both;
     visibility: hidden; }
 
+.library-preview > * {
+  margin-bottom: 5px;
+}
+
 .library-section-label {
   display: block;
   font: 200 18px/1.62em "Open Sans";

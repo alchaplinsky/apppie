@@ -1,0 +1,13 @@
+=flash-message($color)
+  padding: 20px
+  color: #999
+  background: #fff
+  +border-radius(3px)
+  +flash-message-skin($color)
+  .title
+    text-transform: uppercase
+  
+=flash-message-skin($color)
+  border: 1px solid $color
+  .title
+    color: $color
