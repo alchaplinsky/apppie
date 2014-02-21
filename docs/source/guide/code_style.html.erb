@@ -1,0 +1,114 @@
+<%=  partial "guide/navigation"%>
+<div class="mainbar">
+  <h1>Coding Style</h1>
+  <p>All code in any code-base should look like a single person typed it, no matter how many developers are contributing to it.s</p>
+
+  <h2>Structure</h2>
+  <p>There are plenty of different methods for structuring a stylesheet. But chosen code format must ensure that code is easy to read and to make changes, easy to clearly comment and there is minimal chance of accidentally introducing errors.
+    <ul>
+      <li>Use soft-tabs (two space size), not spaces, to indent each property. Never mix spaces and tabs for indentation.</li>
+      <li>Add one blank line between blocks of css properties.</li>
+      <li>Include a single space between selector and opening curly brace. The closing brace should be flush left, using the same level of indentation as the opening selector.</li>
+      <li>Use one declaration per line in a declaration block.</li>
+      <li>Use one level of indentation for each declaration.</li>
+      <li>Include a single space after the colon of a declaration.</li>
+      <li>Use lowercase and shorthand hex values, e.g., <code>#aaa</code>.</li>
+      <li>Use double quotes consistently, e.g., <code>content: ""</code>.</li>
+      <li>Quote attribute values in selectors <code>input[type="text"].</code></li>
+      <li>Include a space after each comma in comma-separated property or function values.</li>
+      <li>Include a semi-colon at the end of the last declaration in a declaration block.</li>
+    </ul>
+  </p>
+  <div class="mbl">
+    <strong>Incorrect</strong>
+    <pre><code>.selector{ background:#fff; color: #333 }</code></pre>
+    <strong>Correct</strong>
+    <pre><code>.selector {
+  background: #fff;
+  color: #333;
+}</code></pre>
+  </div>
+
+
+  <h2>Selectors</h2>
+  <p>Selectors are a powerful tool that allows us to be efficient. But this is also can be most frustrating part of cascading stylesheets. First of all you should use ONLY <em>classes</em> as selectors (except that case when you define default styles for links, headings, paragraphs, etc. in that case you use tags as selectors) and no <em>ids</em>.</p>
+  <ul  class="mbl">
+    <li>Use lowercase and separate words with hyphens when naming selectors. Avoid camelcase and underscores.</li>
+    <li>Use human readable and semantic class names that describe what elements they style.</li>
+    <li>Avoid using over-qualified selectors, <code>div.container</code> can simply be stated as <code>.container</code></li>
+    <li>Use <code>js-</code> prefix for classnames that are used by javasctipt. No styling should be applied to this classes!</li>
+  </ul>
+
+
+  <h2>Properties</h2>
+  <ul>
+    <li>All properties and values should be lowercase, except for font names and vendor-specific properties.</li>
+    <li>Use hex code for colors, or rgba() if opacity is needed. Avoid RGB format and uppercase, and shorten values when possible: <code>#fff</code> instead of <code>#FFFFFF</code></li>
+    <li>Use shorthand (except when overriding styles) for background, border, font, list-style, margin, and padding values as much as possible. </li>
+  </ul>
+  <p>Random properties ordering is chaos, it's better to order and group them, expecialy if you have a lot of them. A good choice is logical or grouped ordering, wherein properties are grouped by meaning and ordered specifically within those groups. The properties within groups are also strategically ordered to create transitions between sections, such as background directly before color. The baseline for ordering is:  </p>
+  <ul>
+    <li>Display</li>
+    <li>Positioning</li>
+    <li>Box model</li>
+    <li>Colors and Typography</li>
+    <li>Other</li>
+  </ul>
+  <p class="mbl">It may seem time consuming to think about properties order while writing css code. But once you get used to it, you'll see that everything has it's own place and you know exactly where you can find colors or positioning rules.</p>
+
+
+  <h2>Values</h2>
+  <p>There may be a lot of inconsistencies in values definitions. Following these simple guidelines will help you to avoid them:</p>
+  <ul class="mbl">
+    <li>Add single space before the value, after the colon</li>
+    <li>Do not pad parentheses with spaces</li>
+    <li>Use double quotes rather than single quotes, and only when needed, such as when a font name has a space.</li>
+    <li>0 values should not have units unless necessary, such as with transition-duration.</li>
+    <li>Line height should also be unit-less, unless necessary to be defined as a specific pixel value. </li>
+    <li>Multiple comma-separated values for one property should be separated by either a space or a newline, including within rgba().</li>
+  </ul>
+
+
+  <h2>Media Queries</h2>
+  <p>Media queries allow us to gracefully degrade the DOM for different screen sizes. If you are adding any, be sure to test above and below the break-point you are targeting.</p>
+  <ul class="mbl">
+    <li>Rule sets for media queries should be indented one level in.</li>
+    <li>It is generally advisable to keep media queries grouped by media at the bottom of the stylesheet.</li>
+  </ul>
+
+
+  <h2>Commenting</h2>
+  <p>Since different code minifiers or uglifiers are more generally used, we can stop thinking about reducing stylsheets sizes by eliminating comments. Well commented code is extremely important. Take time to describe components, how they work, their limitations, and the way they are constructed. Don't leave others in the team guessing as to the purpose of uncommon or non-obvious code.</p>
+  <ul>
+    <li>Place comments on a new line above their subject.</li>
+    <li>Keep line-length to a sensible maximum, e.g., 80 columns.</li>
+    <li>Make liberal use of comments to break CSS code into discrete sections.</li>
+    <li>Use "sentence case" comments and consistent text indentation.</li>
+  </ul>
+  <pre><code class="css">/* ==========================================================================
+   Section comment block
+   ========================================================================== */
+
+/* Sub-section comment block
+   ========================================================================== */
+
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *
+ * @tag This is a tag named 'tag'
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces.
+ */
+
+/* Basic comment */</code></pre>
+
+</div>

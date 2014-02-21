@@ -1,0 +1,23 @@
+.button {
+  font-size: 15px;
+  display: inline-block;
+  padding: 8px 15px;
+  color: #fff;
+  background: #f2836b;
+}
+
+.button:hover {
+  color: #fff;
+  background: #ea775f;
+}
+
+.button.light {
+  padding: 7px 15px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.button.light:hover {
+  background: #fafafa;
+}

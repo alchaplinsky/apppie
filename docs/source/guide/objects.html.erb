@@ -1,0 +1,44 @@
+<%=  partial "guide/navigation"%>
+<div class="mainbar">
+  <h1>Objects</h1>
+  <h2>Learning to think in Objects</h2>
+  <p>Object Oriented CSS is all about learning to think about your UI and CSS in terms of objects. Object is a simple independent and indivisible component that is used across the project. Objects are small little chunks of functionality. You can think of them as interface elements like headings, form fields, buttons, and content areas. </p>
+  <p>Object names should be semantic simple and descriptive.</p>
+  <p>Object's independence means that no external styles or styles of other objects shoul influence to object's look or behaviour. It should look the same if it is placed on empty page as a single element either if it is placed in context within complex layout with multiple other objects.</p>
+  <p>Object's indivisibility means that object is a smallest structural unit of interface and there is a small chance to take smaller parts from it to a separate object. For instance if we take a look at navigation with following structure:</p>
+  <pre><code>&lt;ul class="navigation"&gt;
+  &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/login"&gt;Login&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  <p>It's not likely that we would need to divide this object to elements, because we won't use list item <code>li</code> without actual list element <code>ul</code>. But we can take out a link element. But link should have it's default styles already defined in typography.</p>
+
+
+  <h2>Object modification</h2>
+  <p>There are lots of cases when you have similar objects that differ in minor things like background color or text color or something like this. Apparently there's no need to make up a separate name for this objects and apply same styling for both. Object modification concept will help to solve this. According to this concept, first class, added to an element sets it's default look and behaviour, and second class modifies some of default styling</p>
+  <p>The simplest example: we have <code>.button</code> element which may have different backgrounds ñcolor and text color as well.</p>
+  <pre><code>.button {
+  background: linear-gradient(#eee, #ddd);
+  border: 1px solid #999;
+  color: #666;
+  padding: 4px 10px;
+  cursor: pointer;
+}</code></pre>
+  <p>Next comes object modifier class, which adds new styles or overrides needed styles of 'default' button.</p>
+  <pre><code>.button.primary {
+  background: #428bca;
+  border-color: #357ebd;
+  color: #fff;
+}</code></pre>
+  <p>Object's shouldn't have lots of modifier classes. There should be 2 modifiers maximum on a single object. For instance first for changing object type, and second for setting state. Be minimalistic as possible with amount of classes on a single element.</p>
+  <pre><code>&lt;a href="#" class="button primary disabled"&gt;Button&lt;/a&gt;</code></pre>
+  <h2>Parent-Child relationships</h2>
+  <p>One more way to change object’s appearance or behaviour is to use parent’s class name in selector to add changes to the object. Location dependent styles are usually the kind of things you should avoid, because in general object’s styles should not depend on placement. But in rare cases you may come up with an idea of modifying object due to it’s location. For example let’s make the submit button larger than the default one.</p>
+  <pre><code>.signup-form .button {
+  padding: 8px 20px;
+  }</code></pre>
+  <p>In this case the button will remain an independent object you can place anywhere on the page, and only if placed inside signup form it will change its appearance.</p>
+  <pre><code>&lt;form class="signup-form"&gt;
+  &lt;button class="button"&gt;Button text&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+</div>

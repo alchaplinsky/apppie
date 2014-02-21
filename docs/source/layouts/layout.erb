@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title><%= current_page.data.title || 'ApplePie' %></title>
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/apppie/stylesheets/all.css" />
+  <link rel="stylesheet" href="/apppie/stylesheets/icons.css" />
+  <link rel="stylesheet" href="/apppie/stylesheets/highlight.css" />
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <a href="/">
+          <%= image_tag("logo.png", class: 'left') %>
+          <h2 class="left pts">ApplePie</h2>
+        </a>
+        <ul class="navigation">
+          <li><%= link_to "Home", "/"%></li>
+          <li><%= link_to "Style Guide", "/guide/introduction.html" %></li>
+          <li><%= link_to "Framework", "/framework/reset.html" %></li>
+          <li><%= link_to "Github", "https://github.com/alchapone/applepie" %></li>
+        </ul>
+      </div>
+      <div class="content">
+          <%= yield %>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div>Designed and built at <a href="http://railsware.com" class="railsware">Railsware</a><br /> Code licensed under MIT License</div>
+      </div>
+    </div>
+  </body>
+</html>
